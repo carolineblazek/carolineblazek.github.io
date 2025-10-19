@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+}
+
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    color: white;
+    background-color: rgb(247, 176, 240);
+}
+
+.image-frame{
+    width: 50vw;
+    height: 100vh;
+    background-image: url("../images/home/WebsiteBackgroundCropped.png");
+    background-size: cover;
+    background-position: left;
+    background-color: white;
+}
+
+.description{
+    width: 50%;
+    text-align: center;
+    padding: 20px 60px 20px 60px;
+}
+
+h1{
+    font-family: "Caprasimo", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+
+p{
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    padding: 12px 28px;
+    border: 2px solid white;
+    color: white;
+    background-color:rgb(247, 176, 240);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+button:hover{
+    background: rgb(247, 100, 229);
+    color: white;
+}
+
+@media (max-width: 800px) {
+  .intro {
+    flex-direction: column;
+  }
+
+  .intro img,
+  .description {
+    width: 100%;
+  }
+}
