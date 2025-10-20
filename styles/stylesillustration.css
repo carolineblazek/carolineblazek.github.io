@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    background-color: white;
+}
+
+.illustration{
+    display: flex;
+    height: 100vh;
+}
+
+.navbar{
+    width: 20%;
+    background-color: rgb(247, 176, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.navbar img{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.navbar a{
+    text-decoration: none;
+    width: 100%;
+}
+
+.navbar button{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 400;
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar button:hover{
+    color: rgb(247, 100, 229);
+    transition: color 0.3s ease;
+}
+
+.illoimages{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.keyimage{
+    grid-column: span 2;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.supportingimage{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
