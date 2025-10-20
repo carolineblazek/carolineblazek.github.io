@@ -7,30 +7,35 @@ html{
 
 body{
     margin: 0;
+    background-color:rgb(247, 176, 240);
 }
 
 .intro{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
     color: white;
-    background-color: rgb(247, 176, 240);
+    max-height: 100vh;
 }
 
-.image-frame{
-    width: 50vw;
+img{
+    flex: 1 1 55%;
+    width: 50%;
     height: 100vh;
-    background-image: url("../images/home/WebsiteBackgroundCropped.png");
-    background-size: cover;
-    background-position: left;
-    background-color: white;
+    object-fit: cover;
+    object-position: left center;
+    display: block;
 }
 
 .description{
-    width: 50%;
+    flex: 1 1 50%;
     text-align: center;
-    padding: 20px 60px 20px 60px;
+    padding: 0px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1{
@@ -46,12 +51,14 @@ h2{
     font-weight: 600;
     font-size: 20px;
     text-align: center;
+    margin: 10px 0px 20px 0px;
 }
 
 p{
     font-weight: 400;
     font-size: 20px;
     text-align: center;
+    margin: 0px 40px;
 }
 
 .buttons{
@@ -59,7 +66,7 @@ p{
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin-top: 30px;
+    margin: 30px 0px;
 }
 
 button{
@@ -82,10 +89,35 @@ button:hover{
 @media (max-width: 800px) {
   .intro {
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: auto;
+  }
+  
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
   }
 
-  .intro img,
-  .description {
+  .description{
     width: 100%;
+    padding: 20px;
+    margin: 0;
   }
+
+  h1{
+    font-size: 40px;
+  }
+
+  p, h2{
+    font-size: 16px;
+  }
+
+  button{
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
 }
