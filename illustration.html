@@ -95,18 +95,18 @@
         <div class="illo-row">
             <div class="illo-section">
                 <div class="image-container">
-                    <img class="keyimage" src="images/illustration/RococoSquare3.PNG" alt="Rococo Pattern">
+                    <img class="keyimage" src="images/illustration/RococoSquare3.png" alt="Rococo Pattern">
                     <div class="overlay">
                         <h3>Rococo Patterns</h3>
                         <p>Repeating motifs designed for surface, textile, and print, exploring how illustration can expand into design systems.</p>
                     </div>
                 </div>
-                <img class="supportingimage" src="images/illustration/RococoSquare2.PNG" alt="Rococo Pattern">
-                <img class="supportingimage" src="images/illustration/RococoSquare1.PNG" alt="Rococo Pattern">
+                <img class="supportingimage" src="images/illustration/RococoSquare2.png" alt="Rococo Pattern">
+                <img class="supportingimage" src="images/illustration/RococoSquare1.png" alt="Rococo Pattern">
             </div>
             <div class="illo-section">
                 <div class="image-container">
-                    <img class="keyimage" src="images/illustration/CrumblingDemocracy.PNG" alt="Victim to a Crumbling Democracy">
+                    <img class="keyimage" src="images/illustration/CrumblingDemocracy.png" alt="Victim to a Crumbling Democracy">
                     <div class="overlay">
                         <h3>Editorial Work</h3>
                         <p>Illustrations completed for ARC Magazine, the Croton-Harmon Education Foundation, and coursework at Washington University in St. Louis</p>
@@ -143,58 +143,50 @@
     </div>
     </section>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Select all images inside .image-container
-  const images = document.querySelectorAll(".keyimage, .supportingimage");
+        document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll(".keyimage, .supportingimage");
 
-  images.forEach(img => {
-    img.addEventListener("click", () => {
-      // Create the lightbox overlay
-      const lightbox = document.createElement("div");
-      lightbox.classList.add("lightbox");
-      document.body.appendChild(lightbox);
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+            document.body.appendChild(lightbox);
 
-      // Create and append the enlarged image
-      const lightboxImg = document.createElement("img");
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.appendChild(lightboxImg);
+            const lightboxImg = document.createElement("img");
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.appendChild(lightboxImg);
 
-      // ✅ Create caption container
-      const caption = document.createElement("div");
-      caption.classList.add("lightbox-caption");
+            const caption = document.createElement("div");
+            caption.classList.add("lightbox-caption");
 
-      // Get data attributes for title/description
-      const title = img.dataset.title || "";
-      const desc = img.dataset.description || "";
+            const title = img.dataset.title || "";
+            const desc = img.dataset.description || "";
 
-      // Only show caption if data exists
-      if (title || desc) {
-        caption.innerHTML = `
-          ${title ? `<h3>${title}</h3>` : ""}
-          ${desc ? `<p>${desc}</p>` : ""}
-        `;
-        lightbox.appendChild(caption);
-      }
+            if (title || desc) {
+                caption.innerHTML = `
+                ${title ? `<h3>${title}</h3>` : ""}
+                ${desc ? `<p>${desc}</p>` : ""}
+        `       ;
+                lightbox.appendChild(caption);
+            }
 
-      // Create and append close button
-      const closeBtn = document.createElement("span");
-      closeBtn.innerHTML = "&times;";
-      closeBtn.classList.add("close-btn");
-      lightbox.appendChild(closeBtn);
+            const closeBtn = document.createElement("span");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.classList.add("close-btn");
+            lightbox.appendChild(closeBtn);
 
-      // Close lightbox when clicking X or outside the image
-      closeBtn.addEventListener("click", () => {
-        lightbox.remove();
-      });
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.remove();
-        }
-      });
-    });
-  });
-});
-</script>
+            closeBtn.addEventListener("click", () => {
+                lightbox.remove();
+            });
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                lightbox.remove();
+                }
+            });
+            });
+        });
+        });
+    </script>
 </body>
 </html>
