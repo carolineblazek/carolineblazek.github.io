@@ -11,18 +11,23 @@ body{
 }
 
 .illustration{
-    display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
     width: 20%;
     background-color: rgb(247, 176, 240);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 40px;
+    padding: 30px 40px;
     box-sizing: border-box;
+    z-index: 1000;
 }
 
 .navbar img{
@@ -54,28 +59,47 @@ body{
     transition: color 0.3s ease;
 }
 
+.navbar button.active{
+    font-weight: 700;
+}
+
+.navbar p{
+    font-size: 20px;
+    color: white;
+    align-self: center;
+    text-align: center;
+    letter-spacing: 10px;
+    margin-top: 60%;
+}
+
 .illoimages{
-    width: 80%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: auto;
-    gap: 20px;
-    padding: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 4%;
+    margin-left: 20%;
     box-sizing: border-box;
-    background-color: white;
+}
+
+.illoimages img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.illoimages img:hover{
+    transform: scale(1.02);
+}
+
+.supportingimage{
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .keyimage{
     grid-column: span 2;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.supportingimage{
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
+    grid-row: span 2;
 }
