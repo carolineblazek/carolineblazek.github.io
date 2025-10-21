@@ -15,6 +15,7 @@ body{
     box-sizing: border-box;
 }
 
+/*Navigation Bar*/
 .navbar{
     position: fixed;
     top: 0;
@@ -72,22 +73,42 @@ body{
     margin-top: 60%;
 }
 
-.illoimages{
+/*Illustration Images*/
+.illo-row{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 3rem 4%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.illoimages{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 2%;
     margin-left: 20%;
     box-sizing: border-box;
 }
 
-.illoimages img{
+.illo-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+}
+
+.illo-row:nth-child(even) .illo-section:nth-child(1),
+.illo-row:nth-child(even) .illo-section:nth-child(2){
+  direction: rtl;
+}
+
+.illo-section img{
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
     transition: transform 0.25s ease;
+    direction: ltr;
 }
 
 .illoimages img:hover{
@@ -95,11 +116,12 @@ body{
 }
 
 .supportingimage{
-  grid-column: span 1;
-  grid-row: span 1;
+  height: auto;
+  opacity: 0.98;
 }
 
 .keyimage{
     grid-column: span 2;
     grid-row: span 2;
+    height: auto;
 }
