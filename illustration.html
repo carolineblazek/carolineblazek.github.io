@@ -16,20 +16,20 @@
         <a href="graphicdesign.html"><button>Graphic Design</button></a>
         <a href="sketchbook.html"><button>Sketchbook</button></a>
         <a href="about.html"><button>About</button></a>
-        <a href="contact.html"><button>Contact</button></ a>
+        <a href="contact.html"><button>Contact</button></a>
         <p>✿ ✿ ✿</p>
     </div>
     <div class="illoimages">
         <div class="illo-row">
             <div class="illo-section">
                 <div class="image-container">
-                    <img class="keyimage" src="images/illustration/März.PNG" alt="März">
+                    <img class="keyimage" src="images/illustration/März.PNG" alt="März" data-title="Seasonal Series: März" data-description="An illustrated calendar in the German language inspired by gesture, seasonality, and everyday joy.">
                     <div class="overlay">
                         <h3>Seasonal Series</h3>
                         <p>An illustrated calendar in the German language inspired by gesture, seasonality, and everyday joy.</p>
                     </div>
                 </div>
-                <img class="supportingimage" src="images/illustration/Dezember.PNG" alt="Dezember">
+                <img class="supportingimage" src="images/illustration/Dezember.PNG" alt="Dezember" data-title="Seasonal Series: Dezember" data-description="An illustrated calendar in the German language inspired by gesture, seasonality, and everyday joy.">
                 <img class="supportingimage" src="images/illustration/Juli.PNG" alt="Juli">
             </div>
             <div class="illo-section">
@@ -70,5 +70,59 @@
         </div>
     </div>
     </section>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all images inside .image-container
+  const images = document.querySelectorAll(".keyimage, .supportingimage");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      // Create the lightbox overlay
+      const lightbox = document.createElement("div");
+      lightbox.classList.add("lightbox");
+      document.body.appendChild(lightbox);
+
+      // Create and append the enlarged image
+      const lightboxImg = document.createElement("img");
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.appendChild(lightboxImg);
+
+      // ✅ Create caption container
+      const caption = document.createElement("div");
+      caption.classList.add("lightbox-caption");
+
+      // Get data attributes for title/description
+      const title = img.dataset.title || "";
+      const desc = img.dataset.description || "";
+
+      // Only show caption if data exists
+      if (title || desc) {
+        caption.innerHTML = `
+          ${title ? `<h3>${title}</h3>` : ""}
+          ${desc ? `<p>${desc}</p>` : ""}
+        `;
+        lightbox.appendChild(caption);
+      }
+
+      // Create and append close button
+      const closeBtn = document.createElement("span");
+      closeBtn.innerHTML = "&times;";
+      closeBtn.classList.add("close-btn");
+      lightbox.appendChild(closeBtn);
+
+      // Close lightbox when clicking X or outside the image
+      closeBtn.addEventListener("click", () => {
+        lightbox.remove();
+      });
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.remove();
+        }
+      });
+    });
+  });
+});
+</script>
 </body>
 </html>
