@@ -112,7 +112,7 @@ body{
 }
 
 .illoimages img:hover{
-    transform: scale(1.02);
+    transform: scale(1.10);
 }
 
 .supportingimage{
@@ -126,6 +126,7 @@ body{
     display: block;
 }
 
+/*Overlay and Captions*/
 .image-container{
     position: relative;
     width: 100%;
@@ -141,7 +142,7 @@ body{
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
+    border-radius: 10px;
     transition: transform 0.4s ease;
 }
 
@@ -168,18 +169,19 @@ body{
 }
 
 .image-container:hover .overlay{
-    opacity: 1;
+    opacity: 90%;
 }
 
 .overlay h3{
-    font-size: 20px;
+    font-size: 28px;
     margin: 0 0 0.5rem 0;
     font-weight: 700;
+    max-width: 70%;
 }
 
 .overlay p{
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 18px;
     line-height: 1.4;
     max-width: 80%;
 }
