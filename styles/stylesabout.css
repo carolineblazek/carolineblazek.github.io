@@ -84,17 +84,17 @@ body{
     margin-left: 20%;
     padding: 4rem 5%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     gap: 3rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     box-sizing: border-box;
 }
 
 .profileimage{
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 28rem;
+    height: 28rem;
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
@@ -126,24 +126,33 @@ body{
 .aboutdescription h1{
     font-family: "Caprasimo", serif;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: rgb(247, 176, 240);
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .aboutdescription h2{
     font-size: 1.25rem;
     font-weight: 700;
-    color: darkgray;
-    line-height: 1.6;
-    margin-bottom: .75rem;
-    margin-top: 0;
+    color: rgb(247, 176, 240);
+    line-height: 1.5;
+    margin: 0 0 1.2rem 0;
 }
 
 .aboutdescription p{
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
     color: rgb(80, 80, 80);
     max-width: 100%;
-    margin: 0;
+    margin: 0 0 1rem 0;
+}
+
+a{
+    color: rgb(247, 176, 240);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
