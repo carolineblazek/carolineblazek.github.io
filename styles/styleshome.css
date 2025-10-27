@@ -28,6 +28,13 @@ img{
     display: block;
 }
 
+.handlettering{
+    height: 50vh;
+    width: 50vh;
+    margin: 60px 0px 0px 0px;
+    align-items: center;
+}
+
 .description{
     flex: 1 1 50%;
     text-align: center;
