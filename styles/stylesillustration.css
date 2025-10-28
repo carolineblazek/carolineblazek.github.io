@@ -21,42 +21,55 @@ body{
     top: 0;
     left: 0;
     height: 100vh;
-    width: 20%;
+    width: 22%;
     background-color: rgb(247, 176, 240);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 30px 40px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1.5rem;
     box-sizing: border-box;
     z-index: 1000;
 }
 
-.navbar img{
+.nav-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
+    gap: 1rem;
 }
 
-.navbar img:hover{
+.nav-icon{
+    width: 85%;
+    max-width: 220px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-icon:hover{
     transform: scale(1.05);
-    filter: brightness (0.8);
-    transition: transform 0.4s ease;
 }
 
-.navbar a{
-    text-decoration: none;
+.nav-links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
 }
 
-.navbar button{
+.nav-links button{
     font-family: "Montserrat", sans-serif;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 400;
     background: none;
     border: none;
     text-align: left;
     width: 100%;
-    padding: 10px 0;
+    padding: 12px 0;
     color: white;
     cursor: pointer;
 }
@@ -70,13 +83,44 @@ body{
     font-weight: 700;
 }
 
-.navbar p{
-    font-size: 20px;
-    color: white;
+.nav-links p{
     align-self: center;
-    text-align: center;
-    letter-spacing: 10px;
-    margin-top: 60%;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.6rem;
+    margin-top: 2.5rem;
+}
+
+/*Hamburger Button*/
+.hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span{
+    height: 3px;
+    width: 100px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animate hamburger to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /*Illustration Images*/
@@ -90,8 +134,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem 2%;
-    margin-left: 20%;
+    padding: 2rem 3%;
+    margin-left: 22%;
     box-sizing: border-box;
 }
 
@@ -283,4 +327,85 @@ body{
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/*Tablet (1024px and below)*/
+@media (max-width: 1024px){
+    .navbar{
+        position: fixed;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-header{
+        margin: 0;
+        justify-content: flex-start;
+    }
+
+    .nav-icon{
+        width: 65px;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    .navbar p{
+        display: none;
+    }
+
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: rgb(247, 176, 240);
+        width: 100%;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+        z-index: 900;
+    }
+
+    .nav-links.show{
+        display: flex;
+    }
+
+    .illoimages{
+        margin-left: 0;
+        padding-top: 120px;
+    }
+
+    .illo-row{
+        grid-template-columns: 1fr;
+    }
+
+    .illo-section{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Mobile (600px and below)*/
+@media (max-width: 600px) {
+    .nav-icon{
+        width: 55px;
+    }
+
+    .nav-links button{
+        font-size: 1rem;
+    }
+
+    .hamburger{
+        width: 24x;
+        height: 20px;
+    }
+
+    .illoimages{
+        padding: 1rem 5%;
+    }
 }
