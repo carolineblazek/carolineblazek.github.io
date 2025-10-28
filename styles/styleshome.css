@@ -8,8 +8,10 @@ html{
 body{
     margin: 0;
     background-color:rgb(247, 176, 240);
+    overflow-x: hidden;
 }
 
+/*Desktop Layout*/
 .intro{
     display: flex;
     align-items: center;
@@ -50,16 +52,17 @@ h2{
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 1.4;
-    margin: 0vh 6vw 0vh 6vw;
+    margin: 2vh 6vw 0vh 6vw;
 }
 
 p{
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.4;
-    margin: 0vh 4vw 0vh 4vw;
+    margin: 0vh 4vw;
 }
 
+/*Buttons*/
 .buttons{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -79,7 +82,7 @@ p{
 button{
     font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
-    padding: 12px 26px;
+    padding: 12px 28px;
     border: 2px solid white;
     color: white;
     background-color:rgb(247, 176, 240);
@@ -87,8 +90,11 @@ button{
     transition: all 0.3s ease;
     border-radius: 25px;
     width: 100%;
-    max-width: 220px;
+    max-width: 260px;
+    min-width: 140px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     box-sizing: border-box;
 }
 
@@ -99,48 +105,106 @@ button:hover{
 
 .flowers{
   font-size: 1.4rem;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   margin-top: 1rem;
   text-align: center;
 }
 
-@media (max-width: 800px) {
+/*Tablet (900px and below)*/
+@media (max-width: 900px) {
   .intro {
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: auto;
+    height: auto;
+    min-height: 100vh;
   }
   
-  img{
+  .intro > img{
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0;
+    height: 45vh;
+    object-position: center;
   }
 
   .description{
     width: 100%;
-    padding: 20px;
-    margin: 0;
+    padding: 4vh 6vw;
+    height: auto;
+    justify-content: flex-start;
   }
 
-  h1{
-    font-size: 40px;
+  .handlettering{
+    max-height: 20vh;
+    margin-top: 1.5vh;
   }
 
-  p, h2{
-    font-size: 16px;
+  h2{
+    font-size: 1.2rem;
+    margin: 2vh 6vw;
+  }
+
+  p{
+    font-size: 1rem;
+  }
+
+  .buttons{
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin-top: 2vh
   }
 
   button{
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 1rem;
+    max-width: 220px;
+    padding: 10px 24px;
+  }
+}
+
+/*Mobile (600px and below)*/
+@media (max-width: 600px){
+  .intro{
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .intro > img{
+    height: 35vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .description{
+    padding: 5vh 8vw;
+  }
+
+  .handlettering{
+    max-height: 16vh;
+  }
+
+  h2{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 2vh 4vw;
+  }
+
+  p{
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .buttons{
     grid-template-columns: 1fr;
-    gap: 0.6rem;
+    gap: 0.8rem;
   }
 
+  button{
+    max-width: 90%;
+    font-size: 1rem;
+    padding: 10px 26px;
+    min-width: 200px;
+  }
+
+  .flowers{
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+  }
 }
