@@ -12,85 +12,96 @@ body{
 
 .intro{
     display: flex;
-    flex-wrap: nowrap;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
     color: white;
-    max-height: 100vh;
 }
 
-img{
+.intro > img{
     flex: 1 1 55%;
     width: 50%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     object-position: left center;
-    display: block;
-}
-
-.handlettering{
-    height: 50vh;
-    width: 50vh;
-    margin: 60px 0px 0px 0px;
-    align-items: center;
 }
 
 .description{
     flex: 1 1 50%;
-    text-align: center;
-    padding: 0px 60px;
+    height: 100%;
+    padding: 6vh 4vw;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
 }
 
-h1{
-    font-family: "Caprasimo", serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 60px;
-    text-align: center;
-    margin: 0;
+.handlettering{
+    max-height: 28vh;
+    width: auto;
+    margin-top: 2vh;
 }
 
 h2{
     font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    margin: 10px 0px 20px 0px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 0vh 6vw 0vh 6vw;
 }
 
 p{
     font-weight: 400;
-    font-size: 20px;
-    text-align: center;
-    margin: 0px 40px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0vh 4vw 0vh 4vw;
 }
 
 .buttons{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem 1rem;
+    justify-items: center;
     align-items: center;
-    gap: 15px;
-    margin: 30px 0px;
+    margin-top: 2vh;
+}
+
+.buttons a{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
 
 button{
     font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    padding: 12px 28px;
+    font-size: 1.2rem;
+    padding: 12px 26px;
     border: 2px solid white;
     color: white;
     background-color:rgb(247, 176, 240);
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 25px;
+    width: 100%;
+    max-width: 220px;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 button:hover{
     background: rgb(247, 100, 229);
     color: white;
+}
+
+.flowers{
+  font-size: 1.4rem;
+  letter-spacing: .5rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 @media (max-width: 800px) {
@@ -125,6 +136,11 @@ button:hover{
   button{
     font-size: 16px;
     padding: 10px 20px;
+  }
+
+  .buttons{
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
 }
