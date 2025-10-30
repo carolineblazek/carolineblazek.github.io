@@ -41,8 +41,11 @@ body{
     gap: 1rem;
 }
 
+.desktop-icon{ display: block;}
+.mobile-icon {display: none;}
+
 .nav-icon{
-    width: 120px;
+    width: 250px;
     height: auto;
     transition: transform 0.3s ease;
     vertical-align: middle;
@@ -58,6 +61,7 @@ body{
     align-items: flex-start;
     width: 100%;
     margin-top: 2rem;
+    margin-left: 2rem;
     position: static;
     background: none;
     opacity: 1;
@@ -424,6 +428,7 @@ body{
         z-index: 900;
         max-height: 0;
         overflow: hidden;
+        visibility: hidden;
         opacity: 0;
         transform: translateY(0);
         padding: 0 2rem;
@@ -431,13 +436,15 @@ body{
         top: 70px;
         margin-top: 0;
         left: 0;
-        transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
     }
 
     .nav-links.show{
         max-height: 600px;
+        visibility: visible;
         opacity: 1;
         transform: translateY(0);
+        transition-delay: 0s;
         padding: 0.25rem 2rem 1rem;
     }
 
@@ -460,13 +467,18 @@ body{
     .navbar{
         height: 85px;
     }
-    
-    .nav-icon{
-        width: 55px;
+
+    .desktop-icon{ display: none;}
+    .mobile-icon{
+        display: block;
+        width: 120px;
+        height: auto;
+        margin-left: 10px;
     }
 
     .nav-links{
         top: 85px;
+        margin-left: 0;
     }
 
     .nav-links button{
@@ -478,6 +490,15 @@ body{
         height: 20px;
     }
 
+    .illoimages img:hover, .image-container:hover img{
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .image-container:hover .overlay{
+        opacity: 0 !important;
+    }
+
     .illoimages{
         padding: 105px 5%;
     }
@@ -485,7 +506,7 @@ body{
     .illoimages img{
         width: 100%;
         height: auto;
-        border-radius: 0;
+        border-radius: 10px;
     }
 
     .illo-row, .illo-section{
