@@ -68,10 +68,10 @@ body{
 }
 
 .nav-links.show{
-    max-height: 500px;
+    max-height: 600px;
     opacity: 1;
     transform: translateY(0);
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem 1rem;
 }
 
 .nav-links button{
@@ -400,13 +400,13 @@ body{
 
     /* Hamburger animation */
     .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5.5px, 5.5px);
     }
     .hamburger.active span:nth-child(2) {
     opacity: 0;
     }
     .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5.5px, -5.5px);
     }
 
     .navbar p{
@@ -425,10 +425,11 @@ body{
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(0);
         padding: 0 2rem;
         position: absolute;
         top: 70px;
+        margin-top: 0;
         left: 0;
         transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
     }
@@ -437,7 +438,7 @@ body{
         max-height: 600px;
         opacity: 1;
         transform: translateY(0);
-        padding: 1rem 2rem;
+        padding: 0.25rem 2rem 1rem;
     }
 
     .illoimages{
@@ -456,8 +457,16 @@ body{
 
 /*Mobile (600px and below)*/
 @media (max-width: 600px) {
+    .navbar{
+        height: 85px;
+    }
+    
     .nav-icon{
         width: 55px;
+    }
+
+    .nav-links{
+        top: 85px;
     }
 
     .nav-links button{
@@ -470,6 +479,31 @@ body{
     }
 
     .illoimages{
-        padding: 1rem 5%;
+        padding: 105px 5%;
+    }
+
+    .illoimages img{
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .illo-row, .illo-section{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .image-container, .image-container img, .supportingimage{
+        width: 100%;
+        height: auto;
+    }
+
+    .image-container{
+        border-radius: 0;
+    }
+
+    .image-container img{
+        object-fit: contain;
     }
 }
