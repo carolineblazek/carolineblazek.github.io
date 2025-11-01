@@ -156,3 +156,7 @@ a{
 a:hover{
     text-decoration: underline;
 }
+
+.katonah:hover{
+    text-decoration: none;
+}
