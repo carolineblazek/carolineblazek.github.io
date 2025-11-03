@@ -82,7 +82,7 @@ body{
 /*About Section*/
 .aboutsection{
     margin-left: 20%;
-    padding: 4rem 5%;
+    padding: 3rem 5% 2rem 5%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -159,4 +159,129 @@ a:hover{
 
 .katonah:hover{
     text-decoration: none;
+}
+
+/*Experience Section*/
+.experiencesection {
+    margin-left: 20%;
+    width: 80%;
+    padding: 2rem 5% 2rem 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.experiencesection h1 {
+    font-family: "Caprasimo", serif;
+    font-weight: 500;
+    font-size: 3rem;
+    color: rgb(247, 176, 240);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+/* Section Divider */
+hr{
+    border: none;
+    height: 1.5px;
+    background-color: rgb(247, 176, 240);
+    opacity: 0.8;
+    border-radius: 2px;
+    width: calc(80% - 10%);
+    margin: 1.5rem 0 1.5rem calc(20% + 5%);
+}
+
+/* Grid Layout */
+.experiencegrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Individual Items */
+.experienceitem {
+    background-color: white;
+    border: 2px solid rgb(247, 176, 240);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.experienceitem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    border-color: rgb(247, 100, 229);
+}
+
+.experienceitem h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgb(247, 176, 240);
+    margin: 0 0 0.3rem 0;
+}
+
+.experienceitem p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: rgb(80, 80, 80);
+    margin: 0.2rem 0;
+}
+
+.experienceitem em {
+    color: rgb(150, 150, 150);
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Contact Section */
+.contactsection {
+    margin-left: 20%;
+    width: 80%;
+    padding: 2rem 5% 4rem 5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.contactsection h1 {
+    font-family: "Caprasimo", serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: rgb(247, 176, 240);
+    margin-bottom: 1rem;
+}
+
+.contactsection p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgb(80, 80, 80);
+    margin: 0.5rem 0;
+}
+
+.contactsection a {
+    color: rgb(247, 176, 240);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contactsection a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (max-width: 1100px) {
+    .experiencegrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .experiencegrid {
+        grid-template-columns: 1fr;
+    }
 }
