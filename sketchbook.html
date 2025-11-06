@@ -44,8 +44,103 @@
         <img src="images/sketchbook/CharacterDesIncomplete.JPG" alt="Character Design">
         <img src="images/sketchbook/SLAMSketchbookPage.png" alt="Sketchbook Page">
         <img src="images/sketchbook/LandscapeSketch.png" alt="Landscape Sketch">
+        <img src="images/sketchbook/MakeupIcon.png" alt="Makeup Icon">
+        <img src="images/sketchbook/FashionSketch.png" alt="Fashion Sketch">
+        <img src="images/sketchbook/FashionSketchesOne.png" alt="Fashion Sketches">
+        <img src="images/sketchbook/FashionSketchesTwo.png" alt="Fashion Sketches">
+        <img src="images/sketchbook/SummerSketch.JPG" alt="Summer Sketch">
+        <img src="images/sketchbook/GirlSketch.JPG" alt="Girl Sketch">
+        <img src="images/sketchbook/NarrativeSketch.png" alt="Narrative Sketch">
     </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const images = Array.from(document.querySelectorAll(".sketchimages img"));
+        let currentIndex = 0;
+
+        images.forEach((img, index) => {
+            img.addEventListener("click", () => {
+            currentIndex = index;
+            openLightbox(img);
+            });
+        });
+
+        function openLightbox(img) {
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+            document.body.appendChild(lightbox);
+
+            const lightboxImg = document.createElement("img");
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.appendChild(lightboxImg);
+
+            const caption = document.createElement("div");
+            caption.classList.add("lightbox-caption");
+            updateCaption(caption, img);
+            lightbox.appendChild(caption);
+
+            const closeBtn = document.createElement("span");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.classList.add("close-btn");
+            lightbox.appendChild(closeBtn);
+
+    // Arrows
+            const prevBtn = document.createElement("span");
+            prevBtn.innerHTML = "&#10094;"; // ‹
+            prevBtn.classList.add("nav-arrow", "prev");
+            lightbox.appendChild(prevBtn);
+
+            const nextBtn = document.createElement("span");
+            nextBtn.innerHTML = "&#10095;"; // ›
+            nextBtn.classList.add("nav-arrow", "next");
+            lightbox.appendChild(nextBtn);
+
+    // Event listeners
+            closeBtn.addEventListener("click", () => lightbox.remove());
+            lightbox.addEventListener("click", e => {
+            if (e.target === lightbox) lightbox.remove();
+            });
+
+            nextBtn.addEventListener("click", e => {
+            e.stopPropagation();
+            navigate(1, lightbox, lightboxImg, caption);
+            });
+
+            prevBtn.addEventListener("click", e => {
+            e.stopPropagation();
+            navigate(-1, lightbox, lightboxImg, caption);
+            });
+
+            document.addEventListener("keydown", function keyHandler(e) {
+            if (e.key === "ArrowRight") navigate(1, lightbox, lightboxImg, caption);
+            if (e.key === "ArrowLeft") navigate(-1, lightbox, lightboxImg, caption);
+            if (e.key === "Escape") lightbox.remove();
+      // Remove event listener when lightbox closes
+            lightbox.addEventListener("remove", () =>
+                document.removeEventListener("keydown", keyHandler)
+            );
+            });
+        }
+
+        function updateCaption(caption, img) {
+            const title = img.dataset.title || img.alt || "";
+            const desc = img.dataset.description || "";
+            caption.innerHTML = `
+            ${title ? `<h3>${title}</h3>` : ""}
+            ${desc ? `<p>${desc}</p>` : ""}
+            `;
+        }
+
+        function navigate(direction, lightbox, lightboxImg, caption) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            const newImg = images[currentIndex];
+            lightboxImg.src = newImg.src;
+            lightboxImg.alt = newImg.alt;
+            updateCaption(caption, newImg);
+        }
+    });
+    </script>
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
