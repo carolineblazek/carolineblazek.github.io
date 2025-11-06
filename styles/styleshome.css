@@ -110,8 +110,9 @@ button:hover{
   text-align: center;
 }
 
-/*Tablet (900px and below)*/
-@media (max-width: 900px) {
+/* Responsive Layout */
+/*Tablets*/
+@media (max-width: 1100px) {
   .intro {
     flex-direction: column;
     height: auto;
@@ -137,18 +138,35 @@ button:hover{
   }
 
   h2{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 2vh 6vw;
   }
 
   p{
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .buttons{
     grid-template-columns: 1fr 1fr;
     gap: 0.7rem;
     margin-top: 2vh
+  }
+
+  button{
+    font-size: 1.1rem;
+    max-width: 220px;
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  h2{
+    font-size: 1.2rem;
+    margin: 2vh 6vw;
+  }
+
+  p{
+    font-size: 1rem;
   }
 
   button{
