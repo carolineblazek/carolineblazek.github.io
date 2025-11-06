@@ -416,6 +416,8 @@ body{
     .sketchimages img{
         width: 100%;
         height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
         border-radius: 10px;
     }
 }
