@@ -159,6 +159,7 @@ button:hover{
   }
 }
 
+/*Smaller Tablets & Larger Phones*/
 @media (max-width: 800px) {
   h2{
     font-size: 1.2rem;
@@ -176,7 +177,7 @@ button:hover{
   }
 }
 
-/*Mobile (600px and below)*/
+/*Phones*/
 @media (max-width: 600px){
   .intro{
     flex-direction: column;

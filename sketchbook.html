@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caroline Blazek Illustration</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/stylesillustration.css">
+  </head>
+  <body>
+    <section class="sketchbook">
+    <div class="navbar">
+        <div class="nav-header">
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="about.html">
+                <img src="images/illustration/NavIcon.png" alt="NavIcon" class="nav-icon desktop-icon">
+                <img src="images/home/CarolineBlazek.PNG" alt="Caroline Blazek Logo" class="nav-icon mobile-icon">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><button>Home</button></a>
+            <a href="illustration.html"><button>Illustration</button></a>
+            <a href="graphicdesign.html"><button>Graphic Design</button></a>
+            <a href="sketchbook.html"><button class="active">Sketchbook</button></a>
+            <a href="about.html"><button>About</button></a>
+            <p>✿ ✿ ✿</p>
+        </div>
+        <div class="sketchimages">
+            <img src="images/sketchbook/DragonflyDrafts.JPG" alt="Dragonfly Drafts">
+            <img src="images/sketchbook/CrotonDam.png" alt="Croton Dam">
+            <img src="images/sketchbook/MatisseThumbnails.JPG" alt="Matisse Thumbnails">
+            <img src="images/sketchbook/CharacterDes.JPG" alt="Character Design">
+        </div>
+    </div>
+    </section>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            hamburger.classList.toggle('active');
+    });
+    </script>
+</body>
+</html>
