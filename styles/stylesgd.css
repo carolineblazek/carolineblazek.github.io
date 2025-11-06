@@ -145,8 +145,8 @@ body{
 
 /*Design Images*/
 .designimages{
-    margin-left: 20%;
-    padding: 2rem;
+    padding: 2rem 3%;
+    margin-left: 22%;
     box-sizing: border-box;
 }
 
@@ -168,7 +168,7 @@ body{
 
 .keyimage{
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     display: block;
@@ -195,31 +195,21 @@ body{
     z-index: 2;
 }
 
-.overlay{
-    position: absolute;
-    inset: 0;
-    background-color:rgb(247, 176, 240);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    border-radius: 10px;
-    opacity: 0;
-    color: white;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.image-container{
+.image-container {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    display: flex;
     border-radius: 10px;
-    cursor: pointer;
+    overflow: hidden;
+    line-height: 0;
 }
 
-.image-container img{
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 
@@ -230,21 +220,40 @@ body{
 
 .image-container:hover .overlay{
     opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(247, 176, 240, 0.92);
+    border-radius: 10px;
+    opacity: 0;
+    color: white;
+    padding: 1.5rem;
+    transition: opacity 0.35s ease;
     pointer-events: none;
+    z-index: 2;
+    box-sizing: border-box;
 }
 
 .overlay h3{
-    font-size: 28px;
-    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+    margin: 0 0 0.75rem 0;
     font-weight: 700;
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .overlay p{
     margin: 0;
-    font-size: 18px;
-    line-height: 1.4;
-    max-width: 80%;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 85%;
 }
 
 /*Lightbox*/
@@ -338,14 +347,15 @@ body{
     to { opacity: 1; transform: translateY(0); }
 }
 
-/*Tablet (1024px and below)*/
-@media (max-width: 1024px){
+/* Responsive Layout */
+/*Tablets*/
+@media (max-width: 1100px) {
     .navbar{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 70px;
+        height: 85px;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
@@ -363,10 +373,12 @@ body{
         justify-content: flex-start;
     }
 
-    .nav-icon{
-        width: 65px;
+    .desktop-icon{ display: none;}
+    .mobile-icon{
+        display: block;
+        width: 120px;
         height: auto;
-        transition: transform 0.3s ease;
+        margin-left: 10px;
     }
 
     .hamburger{
@@ -406,79 +418,87 @@ body{
         display: none;
     }
 
-    .nav-links{
+    .nav-links {
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100vw;
+        background-color: rgb(247, 176, 240);
+        box-sizing: border-box;
+        z-index: 999;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        background-color: rgb(247, 176, 240);
-        width: 100%;
-        box-sizing: border-box;
-        z-index: 900;
+        align-items: stretch;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
         max-height: 0;
         overflow: hidden;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(0);
-        padding: 0 2rem;
-        position: absolute;
-        top: 70px;
-        margin-top: 0;
-        left: 0;
-        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+        margin: 0;
+        padding: 0;
+        transition:
+            opacity 0.4s ease,
+            transform 0.4s ease,
+            max-height 0.4s ease,
+            visibility 0s linear 0.4s;
     }
 
-    .nav-links.show{
-        max-height: 600px;
+    .nav-links.show {
+        opacity: 1;
         visibility: visible;
+        transform: translateY(0);
+        max-height: 600px;
+        padding: 0.5rem 0 1rem 0;
+        box-shadow: 0 8px 18px rgba(247, 176, 240, 0.4);
+        transition-delay: 0s;
+    }
+
+    .nav-links button {
+        font-size: 1rem;
+        background: transparent;
+        border: none;
+        text-align: left;
+        width: 100%;
+        padding: 0.75rem 2rem;
+        color: white;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .nav-links.show button {
         opacity: 1;
         transform: translateY(0);
-        transition-delay: 0s;
-        padding: 0.25rem 2rem 1rem;
     }
 
-    .illoimages{
+    .nav-links button:hover {
+        color: rgb(247, 100, 229);
+        transition: color 0.3s ease;
+    }
+
+    .designimages{
         margin-left: 0;
         padding-top: 120px;
     }
 
-    .illo-row{
+    .design-row{
         grid-template-columns: 1fr;
     }
 
-    .illo-section{
-        grid-template-columns: 1fr;
+    .supporting-group{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .supporting-group img{
+        flex: 1 1 calc(50% - 0.5rem);
+        height: auto;
     }
 }
 
-/*Mobile (600px and below)*/
-@media (max-width: 600px) {
-    .navbar{
-        height: 85px;
-    }
-
-    .desktop-icon{ display: none;}
-    .mobile-icon{
-        display: block;
-        width: 120px;
-        height: auto;
-        margin-left: 10px;
-    }
-
-    .nav-links{
-        top: 85px;
-        margin-left: 0;
-    }
-
-    .nav-links button{
-        font-size: 1rem;
-    }
-
-    .hamburger{
-        width: 24x;
-        height: 20px;
-    }
-
+/*Smaller Tablets & Larger Phones*/
+@media (max-width: 800px) {
     .designimages img:hover, .design-container:hover img{
         transform: none !important;
         filter: none !important;
@@ -517,3 +537,6 @@ body{
         object-fit: contain;
     }
 }
+
+/*Phones*/
+@media (max-width: 600px) {}
