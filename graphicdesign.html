@@ -23,8 +23,8 @@
         </div>
         <div class="nav-links">
             <a href="index.html"><button>Home</button></a>
-            <a href="illustration.html"><button class="active">Illustration</button></a>
-            <a href="graphicdesign.html"><button>Graphic Design</button></a>
+            <a href="illustration.html"><button>Illustration</button></a>
+            <a href="graphicdesign.html"><button class="active">Graphic Design</button></a>
             <a href="sketchbook.html"><button>Sketchbook</button></a>
             <a href="about.html"><button>About</button></a>
             <p>✿ ✿ ✿</p>
@@ -175,6 +175,15 @@
             lightboxImg.alt = newImg.alt;
             updateCaption(caption, newImg);
         }
+    });
+    </script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            hamburger.classList.toggle('active');
     });
     </script>
     </body>

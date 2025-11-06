@@ -145,46 +145,46 @@ body{
 
 /*About Section*/
 .aboutsection{
-    margin-left: 20%;
-    padding: 3rem 5% 2rem 5%;
+    margin-left: 22%;
+    padding: 4rem 6% 3rem 6%;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: stretch;
+    justify-content: center;
     gap: 3rem;
-    flex-wrap: nowrap;
     box-sizing: border-box;
 }
 
 .profileimage{
-    position: relative;
-    width: 28rem;
-    height: 28rem;
+    flex: 1;
+    max-width: 420px;
     border-radius: 10px;
     overflow: hidden;
-    flex-shrink: 0;
-    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: stretch;
 }
 
 .profileimage img{
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: 50% 25%;
-    transform: scale(1.3);
+    transform: scale(1.2);
     filter: brightness(0.9);
     transition: transform 0.4s ease;
 }
 
 .profileimage:hover img {
-    transform: scale(1.6);
+    transform: scale(1.8);
 }
 
 /*About Description*/
 .aboutdescription{
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 600px;
+    box-sizing: border-box;
 }
 
 .aboutdescription h1{
@@ -225,130 +225,20 @@ a:hover{
     text-decoration: none;
 }
 
-/*Experience Section*/
-.experiencesection {
-    margin-left: 20%;
-    width: 80%;
-    padding: 2rem 5% 2rem 5%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.experiencesection h1 {
-    font-family: "Caprasimo", serif;
-    font-weight: 500;
-    font-size: 3rem;
-    color: rgb(247, 176, 240);
-    margin-bottom: 2.5rem;
-    text-align: center;
-}
-
-/* Section Divider */
-hr{
-    border: none;
-    height: 1.5px;
-    background-color: rgb(247, 176, 240);
-    opacity: 0.8;
-    border-radius: 2px;
-    width: calc(80% - 10%);
-    margin: 1.5rem 0 1.5rem calc(20% + 5%);
-}
-
-/* Grid Layout */
-.experiencegrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-}
-
-/* Individual Items */
-.experienceitem {
-    background-color: white;
-    border: 2px solid rgb(247, 176, 240);
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.experienceitem:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    border-color: rgb(247, 100, 229);
-}
-
-.experienceitem h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: rgb(247, 176, 240);
-    margin: 0 0 0.3rem 0;
-}
-
-.experienceitem p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: rgb(80, 80, 80);
-    margin: 0.2rem 0;
-}
-
-.experienceitem em {
-    color: rgb(150, 150, 150);
-    font-style: normal;
-    font-weight: 500;
-}
-
-/* Contact Section */
-.contactsection {
-    margin-left: 20%;
-    width: 80%;
-    padding: 2rem 5% 4rem 5%;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.contactsection h1 {
-    font-family: "Caprasimo", serif;
-    font-weight: 500;
-    font-size: 2.5rem;
-    color: rgb(247, 176, 240);
-    margin-bottom: 1rem;
-}
-
-.contactsection p {
+.contact{
     font-size: 1rem;
-    line-height: 1.6;
-    color: rgb(80, 80, 80);
-    margin: 0.5rem 0;
-}
-
-.contactsection a {
-    color: rgb(247, 176, 240);
-    text-decoration: none;
     font-weight: 700;
-}
-
-.contactsection a:hover {
-    text-decoration: underline;
 }
 
 /* Responsive Layout */
+/*Tablets*/
 @media (max-width: 1100px) {
-    .experiencegrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .navbar{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 70px;
+        height: 85px;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
@@ -366,10 +256,12 @@ hr{
         justify-content: flex-start;
     }
 
-    .nav-icon{
-        width: 65px;
+    .desktop-icon{ display: none;}
+    .mobile-icon{
+        display: block;
+        width: 120px;
         height: auto;
-        transition: transform 0.3s ease;
+        margin-left: 10px;
     }
 
     .hamburger{
@@ -409,66 +301,150 @@ hr{
         display: none;
     }
 
-    .nav-links{
+    .nav-links {
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100vw;
+        background-color: rgb(247, 176, 240);
+        box-sizing: border-box;
+        z-index: 999;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        background-color: rgb(247, 176, 240);
-        width: 100%;
-        box-sizing: border-box;
-        z-index: 900;
+        align-items: stretch;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
         max-height: 0;
         overflow: hidden;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(0);
-        padding: 0 2rem;
-        position: absolute;
-        top: 70px;
-        margin-top: 0;
-        left: 0;
-        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+        margin: 0;
+        padding: 0;
+        transition:
+            opacity 0.4s ease,
+            transform 0.4s ease,
+            max-height 0.4s ease,
+            visibility 0s linear 0.4s;
     }
 
-    .nav-links.show{
-        max-height: 600px;
+    .nav-links.show {
+        opacity: 1;
         visibility: visible;
+        transform: translateY(0);
+        max-height: 600px;
+        padding: 0.5rem 0 1rem 0;
+        box-shadow: 0 8px 18px rgba(247, 176, 240, 0.4);
+        transition-delay: 0s;
+    }
+
+    .nav-links button {
+        font-size: 1rem;
+        background: transparent;
+        border: none;
+        text-align: left;
+        width: 100%;
+        padding: 0.75rem 2rem;
+        color: white;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .nav-links.show button {
         opacity: 1;
         transform: translateY(0);
-        transition-delay: 0s;
-        padding: 0.25rem 2rem 1rem;
+    }
+
+    .nav-links button:hover {
+        color: rgb(247, 100, 229);
+        transition: color 0.3s ease;
+    }
+    
+    .aboutsection{
+        margin-left: 0;
+        padding: 7rem 8% 4rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .profileimage{
+        max-width: 70%;
+        height: auto;
+    }
+
+    .aboutdescription{
+        max-width: 85%;
+        text-align: left;
+    }
+
+    .aboutdescription h1{
+        font-size: 2.5rem;
+    }
+
+    .aboutdescription h2{
+        font-size: 1.1rem;
+    }
+
+    .aboutdescription p{
+        font-size: 0.95rem;
     }
 }
 
-@media (max-width: 700px) {
-    .experiencegrid {
-        grid-template-columns: 1fr;
+/*Smaller Tablets & Larger Phones*/
+@media (max-width: 800px) {
+    .aboutsection{
+        padding: 6rem 7% 3rem;
+        gap: 2rem;
     }
 
-    .navbar{
-        height: 85px;
+    .profileimage{
+        max-width: 80%;
     }
 
-    .desktop-icon{ display: none;}
-    .mobile-icon{
-        display: block;
-        width: 120px;
-        height: auto;
-        margin-left: 10px;
+    .aboutdescription h1{
+        font-size: 2.2rem;
     }
 
-    .nav-links{
-        top: 85px;
-        margin-left: 0;
-    }
-
-    .nav-links button{
+    .aboutdescription h2{
         font-size: 1rem;
     }
 
-    .hamburger{
-        width: 24x;
-        height: 20px;
+    .aboutdescription p{
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
+}
+
+/*Phones*/
+@media (max-width: 600px) {
+  .aboutsection {
+    padding: 6.5rem 6% 3rem;
+  }
+
+  .profileimage {
+    max-width: 100%;
+  }
+
+  .aboutdescription {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .aboutdescription h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .aboutdescription h2 {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .aboutdescription p {
+    font-size: 0.9rem;
+  }
+
+  .contact {
+    font-size: 0.9rem;
+  }
 }
