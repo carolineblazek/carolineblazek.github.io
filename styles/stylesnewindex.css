@@ -43,6 +43,10 @@ nav a{
     text-decoration: none;
 }
 
+header p{
+    font-size: 50px;
+}
+
 nav a.active{
     font-weight: 500;
 }
@@ -69,6 +73,9 @@ section{
     color: black;
     top: 88px;
     left: 20px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: 1s ease-out;
 }
 
 .intro > p.hello{
@@ -100,10 +107,25 @@ section{
     flex-direction: column;
     gap: 5px;
     padding: 0 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out,
+                transform 0.8s ease-out;
+}
+
+.image-row.reveal{
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 .image-row img{
     width: 100%;
+    transition: filter 0.4s ease-out;
+    clip-path: inset(0);
+}
+
+.image-row img:hover{
+    filter: brightness(70%);
 }
 
 .description{
@@ -121,7 +143,7 @@ section{
 .text{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
 }
 
 .work-type{
@@ -135,6 +157,9 @@ section{
     width: 325px;
     top: 88px;
     right: 20px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: 1s ease-out;
 }
 
 .about img{
@@ -156,4 +181,109 @@ section{
 
 .about a:hover{
     text-decoration: underline;
+}
+
+.intro.loaded,
+.about.loaded {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 1100px){
+    .content{
+        flex-direction: column;
+        padding: 88px 20px;
+        gap: 40px;
+    }
+
+    .intro,
+    .about{
+        position: static;
+        width: 100%;
+        opacity: 1;
+        transform: none;
+        text-align: left;
+    }
+
+    .selected-works{
+        margin-left: 0;
+        margin-right: 0;
+        border-left: none;
+        border-right: none;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 700px){
+    header{
+        height: 70px;
+        padding: 15px 16px;
+    }
+
+    header p{
+        font-size: 32px;
+    }
+
+    nav a{
+        font-size: 14px;
+        gap: 20px;
+    }
+
+    .intro > p.hello{
+        font-size: 36px;
+        margin-top: 10px;
+    }
+
+    .intro p{
+        font-size: 18px;
+    }
+
+    .about p,
+    .about a{
+        font-size: 18px;
+    }
+
+    .description{
+        font-size: 13px;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4px;
+        line-height: 1.2;
+    }
+
+    .text{
+        gap: 6px;
+    }
+
+    .image-row{
+        padding: 0;
+    }
+
+    .image-row img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+
+    nav{
+        gap: 16px;
+    }
+
+    .intro > p.hello{
+        font-size: 30px;
+    }
+
+    .intro p{
+        font-size: 16px;
+    }
+
+    .about p,
+    .about a{
+        font-size: 16px;
+    }
+
+    .description{
+        font-size: 12px;
+    }
 }
