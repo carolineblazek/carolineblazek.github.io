@@ -145,10 +145,10 @@ hr{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-left: calc(50% + 20px);
+    margin-left: calc(50%);
     border-left: 1px solid gray;
-    padding-left: 20px;
-    padding-bottom: 80px;
+    border-right: 1px solid gray;
+    padding-bottom: 0px;
 }
 
 .image{
@@ -176,6 +176,37 @@ hr{
 .intro.loaded{
     opacity: 1;
     transform: translateX(0);
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px 20px 20px;
+    border-top: 1px solid gray;
+}
+
+.contact-icons{
+    display: flex;
+    gap: 20px;
+}
+
+.contact-icons a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.contact-icons a:hover{
+    color: gray;
+}
+
+.design-tag p{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
 }
 
 @media (max-width: 1100px){

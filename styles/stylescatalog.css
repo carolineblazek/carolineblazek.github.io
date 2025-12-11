@@ -100,7 +100,8 @@ section{
     flex-direction: column;
     margin-left: calc(325px + 40px);
     border-left: 1px solid gray;
-    padding-bottom: 80px;
+    border-right: 1px solid gray;
+    padding-bottom: 0px;
 }
 
 .project-row{
@@ -188,6 +189,36 @@ section{
 .intro.loaded{
     opacity: 1;
     transform: translateX(0);
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px 20px 20px;
+}
+
+.contact-icons{
+    display: flex;
+    gap: 20px;
+}
+
+.contact-icons a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.contact-icons a:hover{
+    color: gray;
+}
+
+.design-tag p{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
 }
 
 @media (max-width: 1100px){
