@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesnewabout.css">
+    </head>
+    <body>
+        <header>
+            <p>✸</p>
+            <nav>
+                <a href="newindex.html">Home</a>
+                <a href="newillustration.html">Illustration</a>
+                <a href="design.html">Design</a>
+                <a href="newabout.html" class="active">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <div class="intro-description">
+                    <p class="hello">About Me ✸</p>
+                    <p>A designer and illustrator drawn to expressive color and thoughtful detail.</p>
+                </div>
+                <div class="about">
+                    <img src="images/home/ProfilePhoto.png" alt="Profile Image">
+                    <div class="about-info">
+                        <p class="contact">You can get in touch with me at <a href="mailto:cblazek07@gmail.com">cblazek07@gmail.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="experience">
+                <section class="experience-row">
+                    <div class="experience-info">
+                        <div class="job-info">
+                            <p class="job-title">Graphic Designer</p>
+                            <p><a href="https://katonahwine.com">Katonah Wine & Liquor</a> ✸ May 2025 - Present</p>
+                        </div>
+                        <div class="job-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <a class="job-image">
+                        <img src="images/design/Tasting Event Banner.jpg" alt="Katonah Wine & Liquor">
+                    </a>
+                </section>
+                <section class="experience-row">
+                    <div class="experience-info">
+                        <div class="job-info">
+                            <p class="job-title">Editorial Illustrator</p>
+                            <p><a href="https://arcmag.org">Arc Magazine</a> ✸ Sep. 2024 - Present</p>
+                        </div>
+                        <div class="job-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <a class="job-image">
+                        <img src="images/illustration/LetterToEditor.PNG" alt="ARC Magazine">
+                    </a>
+                </section>
+                <section class="experience-row">
+                    <div class="experience-info">
+                        <div class="job-info">
+                            <p class="job-title">Head of Marketing</p>
+                            <p>WashU Poker Club ✸ Sep. 2025 - Present</p>
+                        </div>
+                        <div class="job-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <a class="job-image">
+                        <img src="images/design/DecemberTournament.png" alt="WashU Poker Club">
+                    </a>
+                </section>
+                <section class="experience-row">
+                    <div class="experience-info">
+                        <div class="job-info">
+                            <p class="job-title">Painter & Artist's Assistant</p>
+                            <p><a href="https://sherwoodforestdesign.com">Sherwood Forest Design</a> ✸ Nov. 2022 - Present</p>
+                        </div>
+                        <div class="job-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <a class="job-image">
+                        <img src="images/home/sherwoodforest.png" alt="Sherwood Forest Design">
+                    </a>
+                </section>
+                <section class="footer">
+                    <div class="contact-icons">
+                        <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cblazek07@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="design-tag">
+                        <p>Website Designed by Caroline Blazek ✸</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".experience-row").forEach(row => {
+                observer.observe(row);
+            });
+
+            window.addEventListener("load", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>

@@ -82,31 +82,57 @@ section{
     transition: 1s ease-out;
 }
 
-.intro > p.title{
+.intro-description > p.hello{
     font-size: 50px;
     font-weight: 500;
     margin: 20px 0px;
 }
 
-.intro p{
+.intro-description p{
     font-size: 24px;
     margin: 0;
 }
 
-.projects{
+.about img{
+    width: 100%;
+    padding: 20px 0;
+}
+
+.about p{
+    font-size: 24px;
+    margin: 0;
+}
+
+.about a{
+    font-size: 24px;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+}
+
+.about a:hover{
+    text-decoration: underline;
+}
+
+.intro.loaded{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.experience{
     flex: 3;
     position: relative;
     display: flex;
     flex-direction: column;
     margin-left: calc(325px + 40px);
     border-left: 1px solid gray;
-    padding-bottom: 80px;
+    border-right: 1px solid gray;
+    padding-bottom: 0px;
 }
 
-.project-row{
+.experience-row{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: 20px;
     align-items: stretch;
     padding: 20px 20px;
@@ -117,77 +143,97 @@ section{
                 transform 0.8s ease-out;
 }
 
-.project-row.reveal{
+.experience-row.reveal{
     opacity: 1;
     transform: translateY(0px);
 }
 
-.description{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    flex: 1;
-    height: 100%;
-    gap: 20px;
-    font-size: 15px;
-    font-weight: 400;
+.job-info a{
+    text-decoration: none;
     color: black;
 }
 
-.text{
+.job-info a:hover{
+    text-decoration: underline;
+}
+
+.experience-info{
+    flex: 0 0 60%;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    gap: 20px;
+    color: black;
 }
 
-.type-year{
+.job-info{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.type-year p{
+.job-info p{
     margin: 0;
     font-size: 24px;
     font-weight: 400;
 }
 
-.project-title a{
-    display: block;
-    width: 100%;
+p.job-title{
     font-size: 50px;
     font-weight: 500;
-    color: black;
-    line-height: 1.1;
-    text-decoration: none;
 }
 
-.project-title a:hover{
-    text-decoration: underline;
+.job-description p{
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0;
 }
 
-.project-row a{
-    flex: 1;
+.job-image{
+    flex: 0 0 40%;
+    max-width: 40%;
     display: flex;
 }
 
-.project-row img{
+.job-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: filter 0.4s ease-out;
 }
 
-.project-row img:hover{
+.job-image img:hover{
     filter: brightness(70%);
 }
 
-.intro.loaded{
-    opacity: 1;
-    transform: translateX(0);
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px 20px 20px;
+}
+
+.contact-icons{
+    display: flex;
+    gap: 20px;
+}
+
+.contact-icons a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.contact-icons a:hover{
+    color: gray;
+}
+
+.design-tag p{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
 }
 
 @media (max-width: 1100px){
