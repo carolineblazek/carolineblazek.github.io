@@ -43,6 +43,10 @@ nav a{
     text-decoration: none;
 }
 
+a:hover{
+    text-decoration: underline;
+}
+
 header p{
     font-size: 50px;
 }
@@ -139,10 +143,16 @@ section{
     letter-spacing: 1.5px;
 }
 
+.project-name{
+    color: black;
+    text-decoration: none;
+}
+
 .text{
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: baseline;
 }
 
 .work-type{
