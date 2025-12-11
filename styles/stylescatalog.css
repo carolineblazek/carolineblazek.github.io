@@ -70,7 +70,6 @@ section{
     flex: 1;
     position: fixed;
     width: 325px;
-    max-width: 325px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -99,9 +98,7 @@ section{
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     margin-left: calc(325px + 40px);
-    margin-right: 20px;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     padding-bottom: 80px;
@@ -111,8 +108,9 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 20px;
     align-items: stretch;
-    padding: 40px 20px;
+    padding: 20px 20px;
     opacity: 0;
     border-bottom: 1px solid gray;
     transform: translateY(30px);
@@ -139,36 +137,41 @@ section{
 
 .text{
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
 
-.type-skills{
+.type-year{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
 }
 
-.type-skills p{
+.type-year p{
     margin: 0;
+    font-size: 24px;
+    font-weight: 400;
 }
 
-.title-year{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: baseline;
+.project-title a{
+    display: block;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 500;
+    color: black;
+    line-height: 1.1;
+    text-decoration: none;
 }
 
-.title-year p{
-    margin: 0;
+.project-title a:hover{
+    text-decoration: underline;
 }
 
 .project-row a{
     flex: 1;
-    max-width: 50%;
     display: flex;
 }
 
