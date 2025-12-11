@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="styles/stylesdesign.css">
+    </head>
+    <body>
+        <header>
+            <p>✸</p>
+            <nav>
+                <a href="newindex.html">Home</a>
+                <a>Illustration</a>
+                <a class="active">Design</a>
+                <a>About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <p class="title">Design ✸</p>
+                <p>Design work completed for study at the Sam Fox School of Art & Architecture at Washington University in St. Louis.</p>
+            </div>
+            <div class="projects">
+                <section class="project-row">
+                    <div class="description">
+                        <div class="text">
+                            <div class="type-skills">
+                                <p>Book</p>
+                                <p>InDesign ✸ Pacing ✸ Visual Storytelling</p>
+                            </div>
+                            <div class="title-year">
+                                <a href="thelivingornament.html" class="project-name">The Living Ornament</a>
+                                <p>2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="thelivingornament.html">
+                        <img src="images/home/counterthumbnail.png" alt="The Living Ornament">
+                    </a>
+                </section>
+                <section class="project-row">
+                    <div class="description">
+                        <div class="text">
+                            <div class="type-skills">
+                                <p>Dust Jacket</p>
+                                <p>InDesign ✸ Pacing ✸ Visual Storytelling</p>
+                            </div>
+                            <div class="title-year">
+                                <a class="project-name">Emma Dust Jacket Reimagined</a>
+                                <p>2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a>
+                        <img src="images/design/EmmaBookJacketMockup.jpg" alt="Emma Dust Jacket">
+                    </a>
+                </section>
+            </div>
+        </div>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".project-row").forEach(row => {
+                observer.observe(row);
+            });
+
+            window.addEventListener("load", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
