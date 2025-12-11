@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="styles/stylesprojectpage.css">
+    </head>
+    <body>
+        <header>
+            <p>✸</p>
+            <nav>
+                <a>Home</a>
+                <a>Illustration</a>
+                <a class="active">Design</a>
+                <a>About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <div class="title-subtitle">
+                    <p class="title">The Living Ornament</p>
+                    <p class="subtitle">Book ✸ <a>Design</a></p>
+                </div>
+                <div class="info-description">
+                    <div class="info">
+                        <div class="info-row">
+                            <p>Year</p>
+                            <p class="strong">2025</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Client</p>
+                            <p class="strong">Typography II</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Skills</p>
+                            <p class="strong">InDesign, Pacing, Visual Storytelling</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <p>A visual dialogue between <em>"The Lesser Arts"</em> by William Morris and <em>"Questions of Style"</em> by Alois Riegl, showcasing the development of ornament from naturalistic to abstract.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+            <div class="project-images">
+                <div class="image">
+                    <img src="images/home/counterthumbnail.png" alt="The Living Ornament">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/WhiteRose.jpg" alt="Birth of the White Rose">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaBookJacketMockup.jpg" alt="The Living Ornament">
+                </div>
+            </div>
+        </div>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".image").forEach(row => {
+                observer.observe(row);
+            });
+
+            window.addEventListener("load", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>

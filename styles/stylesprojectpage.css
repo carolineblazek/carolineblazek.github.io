@@ -43,6 +43,10 @@ nav a{
     text-decoration: none;
 }
 
+nav a:hover{
+    text-decoration: underline;
+}
+
 header p{
     font-size: 50px;
 }
@@ -65,10 +69,11 @@ section{
 .intro{
     flex: 1;
     position: fixed;
-    width: 325px;
+    width: calc(50% - 40px);
+    height: calc(100vh - 108px);
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: space-between;
     line-height: 1.2;
     color: black;
     top: 88px;
@@ -78,10 +83,50 @@ section{
     transition: 1s ease-out;
 }
 
-.intro > p.hello{
+.title-subtitle{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 40px;
+}
+
+.title-subtitle > p.title{
     font-size: 50px;
     font-weight: 500;
-    margin: 20px 0px;
+    margin: 20px 0px 0px 0px;
+}
+
+.title-subtitle > p.subtitle{
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0px;
+    color: black;
+}
+
+.subtitle > a{
+    color: gray;
+}
+
+.subtitle > a:hover{
+    text-decoration: underline;
+}
+
+.info-description{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+hr{
+    margin: 5px 0px;
+    color: gray;
 }
 
 .intro p{
@@ -89,23 +134,23 @@ section{
     margin: 0;
 }
 
-.selected-works{
-    flex: 2;
+.strong{
+    font-weight: 400;
+}
+
+.project-images{
+    flex: 1;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-left: calc(325px + 40px);
-    margin-right: calc(325px + 40px);
+    gap: 10px;
+    margin-left: calc(50% + 20px);
     border-left: 1px solid gray;
-    border-right: 1px solid gray;
+    padding-left: 20px;
     padding-bottom: 80px;
 }
 
-.image-row{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.image{
     padding: 0 20px;
     opacity: 0;
     transform: translateY(30px);
@@ -113,77 +158,21 @@ section{
                 transform 0.8s ease-out;
 }
 
-.image-row.reveal{
+.image.reveal{
     opacity: 1;
     transform: translateY(0px);
 }
 
-.image-row img{
+.image img{
     width: 100%;
     transition: filter 0.4s ease-out;
 }
 
-.image-row img:hover{
+.image img:hover{
     filter: brightness(70%);
 }
 
-.description{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 400;
-    color: black;
-    line-height: 0;
-    letter-spacing: 1.5px;
-}
-
-.text{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.work-type{
-    color: gray;
-    font-weight: 200;
-}
-
-.about{
-    flex: 1;
-    position: fixed;
-    width: 325px;
-    top: 88px;
-    right: 20px;
-    opacity: 0;
-    transform: translateX(30px);
-    transition: 1s ease-out;
-}
-
-.about img{
-    width: 100%;
-    padding: 20px 0;
-}
-
-.about p{
-    font-size: 24px;
-    margin: 0;
-}
-
-.about a{
-    font-size: 24px;
-    margin: 0;
-    text-decoration: none;
-    color: black;
-}
-
-.about a:hover{
-    text-decoration: underline;
-}
-
-.intro.loaded,
-.about.loaded {
+.intro.loaded{
     opacity: 1;
     transform: translateX(0);
 }
@@ -195,8 +184,7 @@ section{
         gap: 40px;
     }
 
-    .intro,
-    .about{
+    .intro{
         position: static;
         width: 100%;
         opacity: 1;
@@ -204,12 +192,17 @@ section{
         text-align: left;
     }
 
-    .selected-works{
+    .project-images{
         margin-left: 0;
         margin-right: 0;
         border-left: none;
         border-right: none;
+        padding-left: 0;
         padding-bottom: 40px;
+    }
+
+    .image{
+        padding: 0;
     }
 }
 
@@ -228,7 +221,7 @@ section{
         gap: 20px;
     }
 
-    .intro > p.hello{
+    .intro > p.title{
         font-size: 36px;
         margin-top: 10px;
     }
@@ -237,52 +230,25 @@ section{
         font-size: 18px;
     }
 
-    .about p,
-    .about a{
-        font-size: 18px;
-    }
-
-    .description{
-        font-size: 13px;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 4px;
-        line-height: 1.2;
-    }
-
-    .text{
-        gap: 6px;
-    }
-
-    .image-row{
+    .image{
         padding: 0;
     }
 
-    .image-row img{
+    .image img{
         width: 100%;
     }
 }
 
 @media (max-width: 480px){
-
     nav{
         gap: 16px;
     }
 
-    .intro > p.hello{
+    .intro > p.title{
         font-size: 30px;
     }
 
     .intro p{
         font-size: 16px;
-    }
-
-    .about p,
-    .about a{
-        font-size: 16px;
-    }
-
-    .description{
-        font-size: 12px;
     }
 }
