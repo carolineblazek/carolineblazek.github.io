@@ -238,10 +238,41 @@ section{
     color: black;
 }
 
+footer{
+    display: none;
+    border-top: 1px solid gray;
+    padding: 20px 24px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 88px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+footer .contact-icons{
+    display: flex;
+    gap: 20px;
+}
+
+footer .contact-icons a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+footer .design-tag p{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
+}
+
 @media (max-width: 1100px){
     .content{
         flex-direction: column;
-        padding: 88px 20px;
+        padding: 88px 20px 0px 20px;
         gap: 40px;
     }
 
@@ -254,12 +285,33 @@ section{
         text-align: left;
     }
 
+    .about{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .about img{
+        width: 50%;
+        padding: 0px;
+    }
+
     .selected-works{
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
         border-left: none;
         border-right: none;
-        padding-bottom: 40px;
+    }
+
+    .image-row{
+        padding: 0px;
+    }
+
+    .footer{
+        display: none;
+    }
+
+    footer{
+        display: flex;
     }
 }
 
@@ -279,8 +331,7 @@ section{
     }
 
     .intro > p.hello{
-        font-size: 36px;
-        margin-top: 10px;
+        margin: 0;
     }
 
     .intro p{
@@ -314,25 +365,41 @@ section{
 }
 
 @media (max-width: 480px){
-
     nav{
         gap: 16px;
     }
 
-    .intro > p.hello{
-        font-size: 30px;
+    .intro{
+        gap: 20px;
     }
 
     .intro p{
         font-size: 16px;
     }
 
-    .about p,
-    .about a{
+    .about{
+        gap: 10px;
+    }
+
+    .about-info p,
+    .about-info a{
         font-size: 16px;
     }
 
     .description{
         font-size: 12px;
+    }
+
+    footer{
+        gap: 50px;
+    }
+    
+    footer > .contact-icons a, 
+    footer > .design-tag p{
+        font-size: 16px;
+    }
+
+    footer > .design-tag p{
+        text-align: right;
     }
 }

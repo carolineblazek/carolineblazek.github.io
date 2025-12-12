@@ -269,15 +269,15 @@ hr{
     .image img{
         width: 100%;
     }
+
+    .footer{
+        display: none;
+    }
 }
 
 @media (max-width: 480px){
     nav{
         gap: 16px;
-    }
-
-    .intro > p.title{
-        font-size: 30px;
     }
 
     .intro p{
