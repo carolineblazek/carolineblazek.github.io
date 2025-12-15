@@ -221,28 +221,58 @@ section{
     color: black;
 }
 
+footer{
+    display: none; 
+    padding: 20px 24px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 88px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+footer .contact-icons a{
+    font-size: 20px;
+}
+
+footer .design-tag p{
+    font-size: 15px;
+}
+
 @media (max-width: 1100px){
     .content{
         flex-direction: column;
-        padding: 88px 20px;
+        padding: 88px 0px 0px 0px;
         gap: 40px;
     }
 
-    .intro,
-    .about{
+    .intro{
         position: static;
         width: 100%;
         opacity: 1;
         transform: none;
         text-align: left;
+        box-sizing: border-box;
+        padding: 0px 20px;
     }
 
-    .selected-works{
-        margin-left: 0;
-        margin-right: 0;
+    .projects{
+        margin: 0;
         border-left: none;
         border-right: none;
-        padding-bottom: 40px;
+    }
+
+    .projects{
+        border-top: 1px solid gray;
+    }
+
+    .footer{
+        display: none;
+    }
+
+    footer{
+        display: flex;
     }
 }
 
@@ -261,61 +291,62 @@ section{
         gap: 20px;
     }
 
-    .intro > p.hello{
-        font-size: 36px;
-        margin-top: 10px;
+    .intro > p.title{
+        margin: 0;
     }
 
     .intro p{
         font-size: 18px;
     }
 
-    .about p,
-    .about a{
+    .project-row{
+        flex-direction: column;
+    }
+
+    .type-year p{
         font-size: 18px;
     }
 
-    .description{
-        font-size: 13px;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 4px;
-        line-height: 1.2;
-    }
-
-    .text{
-        gap: 6px;
-    }
-
-    .image-row{
-        padding: 0;
-    }
-
-    .image-row img{
-        width: 100%;
+    .project-title a{
+        font-size: 32px;
     }
 }
 
 @media (max-width: 480px){
-
     nav{
         gap: 16px;
     }
 
-    .intro > p.hello{
-        font-size: 30px;
+    .intro{
+        gap: 20px;
     }
 
     .intro p{
         font-size: 16px;
     }
 
-    .about p,
-    .about a{
+    .intro p{
         font-size: 16px;
     }
 
-    .description{
-        font-size: 12px;
+    .type-year p{
+        font-size: 16px;
+    }
+
+    .project-title a{
+        font-size: 30px;
+    }
+
+    footer{
+        gap: 50px;
+    }
+
+    footer .contact-icons a,
+    footer .design-tag p{
+        font-size: 16px;
+    }
+
+    footer .design-tag p{
+        text-align: right;
     }
 }
