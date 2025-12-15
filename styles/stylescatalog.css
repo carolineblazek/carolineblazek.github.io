@@ -261,9 +261,6 @@ footer .design-tag p{
         margin: 0;
         border-left: none;
         border-right: none;
-    }
-
-    .projects{
         border-top: 1px solid gray;
     }
 
@@ -319,10 +316,6 @@ footer .design-tag p{
 
     .intro{
         gap: 20px;
-    }
-
-    .intro p{
-        font-size: 16px;
     }
 
     .intro p{
