@@ -209,10 +209,41 @@ hr{
     color: black;
 }
 
+footer{
+    display: none;
+    border-top: 1px solid gray;
+    padding: 20px 24px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 88px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+footer .contact-icons{
+    display: flex;
+    gap: 20px;
+}
+
+footer .contact-icons a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+footer .design-tag p{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
+}
+
 @media (max-width: 1100px){
     .content{
         flex-direction: column;
-        padding: 88px 20px;
+        padding: 88px 20px 0px 20px;
         gap: 40px;
     }
 
@@ -236,6 +267,14 @@ hr{
     .image{
         padding: 0;
     }
+
+    .footer{
+        display: none;
+    }
+
+    footer{
+        display: flex;
+    }
 }
 
 @media (max-width: 700px){
@@ -253,9 +292,8 @@ hr{
         gap: 20px;
     }
 
-    .intro > p.title{
-        font-size: 36px;
-        margin-top: 10px;
+    .title-subtitle > p.title{
+        margin: 0;
     }
 
     .intro p{
@@ -282,5 +320,18 @@ hr{
 
     .intro p{
         font-size: 16px;
+    }
+
+    footer{
+        gap: 50px;
+    }
+    
+    footer > .contact-icons a, 
+    footer > .design-tag p{
+        font-size: 16px;
+    }
+
+    footer > .design-tag p{
+        text-align: right;
     }
 }
