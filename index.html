@@ -1,28 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caroline Blazek</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="styles/styleshome.css">
-  </head>
-  <body>
-    <section class="intro">
-      <img src="images/home/WebsiteBackgroundCropped.png" alt="Background Illustration">
-      <div class="description">
-        <img class="handlettering" src="images/home/CarolineBlazek.PNG" alt="Caroline Blazek">
-        <h2>Hi! I'm Caroline, a designer and illustrator drawn to expressive color and thoughtful detail.</h2>
-        <p>I'm studying Communication Design with a focus in illustration, creating work that connects storytelling and visual identity across editorial, branding, web and print.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek: Home</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesindex.css">
+    </head>
+    <body>
+        <header>
+            <p>✸</p>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="illustration.html">Illustration</a>
+                <a href="design.html">Design</a>
+                <a href="newabout.html">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <p class="hello">Hello!<br>I'm Caroline ✸</p>
+                <p>A third-year Communication Design BFA student at Washington University in St. Louis, with a concentration in Illustration and second major in Art History.</p>
+            </div>
+            <div class="selected-works">
+                <div class="section-title">
+                    <p>Selected Works</p>
+                </div>
+                <section class="image-row">
+                    <a href="thelivingpattern.html">
+                        <img src="images/design/LivingPattern/LivingPatternNinthSpreadDetail.png" alt="The Living Pattern">
+                    </a>
+                    <div class="description">
+                        <div class="text">
+                            <a href="thelivingpattern.html" class="project-name">The Living Pattern</a>
+                            <p>✸</p>
+                            <a href="design.html" class="work-type">Design</a>
+                        </div>
+                        <p>2025</p>
+                    </div>
+                </section>
+                <section class="image-row">
+                    <a href="shiftingseasons.html">
+                        <img src="images/illustration/ShiftingSeasons/ShiftingSeasonsContextCardsFlipping.png" alt="Shifting Seasons">
+                    </a>
+                    <div class="description">
+                        <div class="text">
+                            <a href="shiftingseasons.html" class="project-name">Shifting Seasons</a>
+                            <p>✸</p>
+                            <a href="newillustration.html" class="work-type">Illustration</a>
+                        </div>
+                        <p>2025</p>
+                    </div>
+                </section>
+                <section class="image-row">
+                    <a href="emmadustjacket.html">
+                        <img src="images/design/EmmaDustJacket/EmmaCover.png" alt="Emma Reimagined">
+                    </a>
+                    <div class="description">
+                        <div class="text">
+                            <a href="emmadustjacket.html" class="project-name">Emma Reimagined</a>
+                            <p>✸</p>
+                            <a href="design.html" class="work-type">Design</a>
+                        </div>
+                        <p>2025</p>
+                    </div>
+                </section>
+                <section class="image-row">
+                    <a href="touchingthevoid.html">
+                        <img src="images/design/TouchingTheVoid/TouchingTheVoidFull.png" alt="Touching The Void">
+                    </a>
+                    <div class="description">
+                        <div class="text">
+                            <a href="touchingthevoid.html" class="project-name">Touching The Void Exhibition Poster</a>
+                            <p>✸</p>
+                            <a href="design.html" class="work-type">Design</a>
+                        </div>
+                        <p>2025</p>
+                    </div>
+                </section>
+                <section class="footer">
+                    <div class="contact-icons">
+                        <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cblazek07@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="design-tag">
+                        <p>Website Designed by Caroline Blazek ✸</p>
+                    </div>
+                </section>
+            </div>
+            <div class="about">
+                <img src="images/home/ProfilePhoto.png" alt="Profile Image">
+                <div class="about-info">
+                    <p class="contact">You can get in touch with me at <a href="mailto:cblazek07@gmail.com">cblazek07@gmail.com</a>.</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:cblazek07@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="design-tag">
+                <p>Website Designed by Caroline Blazek ✸</p>
+            </div>
+        </footer>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
 
-        <div class="buttons">
-            <a href="illustration.html"><button>Illustration</button></a>
-            <a href="graphicdesign.html"><button>Graphic Design</button></a>
-             <a href="sketchbook.html"><button>Sketchbook</button></a>
-            <a href="about.html"><button>About</button></a>
-          </div>
-          <p class="flowers">✿ ✿ ✿</p>
-      </div>
-    </section>
-  </body>
+            document.querySelectorAll(".image-row").forEach(row => {
+                observer.observe(row);
+            });
+
+            window.addEventListener("load", () => {
+                document.querySelector(".intro").classList.add("loaded");
+                document.querySelector(".about").classList.add("loaded");
+            });
+        </script>
+    </body>
 </html>
