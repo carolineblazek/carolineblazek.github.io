@@ -90,28 +90,7 @@ section{
 
 .intro-description p{
     font-size: 24px;
-    margin: 0;
-}
-
-.about img{
-    width: 100%;
-    padding: 20px 0;
-}
-
-.about p{
-    font-size: 24px;
-    margin: 0;
-}
-
-.about a{
-    font-size: 24px;
-    margin: 0;
-    text-decoration: none;
-    color: black;
-}
-
-.about a:hover{
-    text-decoration: underline;
+    margin: 0px 0px 20px 0px;
 }
 
 .intro.loaded{
@@ -130,6 +109,14 @@ section{
     padding-bottom: 0px;
 }
 
+.section-title p{
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 20px 20px 5px 20px;
+}
+
 .experience-row{
     display: flex;
     flex-direction: row;
@@ -141,6 +128,10 @@ section{
     transform: translateY(30px);
     transition: opacity 0.8s ease-out,
                 transform 0.8s ease-out;
+}
+
+.experience .experience-row:first-of-type{
+    border-top: 1px solid gray;
 }
 
 .experience-row.reveal{

@@ -5,12 +5,14 @@ html{
     font-weight: 200;
     font-style: normal;
     letter-spacing: 2px;
+    overflow-x: hidden;
 }
 
 body{
     background-color: white;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 header{
@@ -56,7 +58,8 @@ nav a.active{
 }
 
 .content{
-    padding: 88px 20px 0px 20px;
+    width: 100%;
+    padding: 88px 0px 0px 0px;
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -72,11 +75,12 @@ section{
     width: 325px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     line-height: 1.2;
     color: black;
     top: 88px;
     left: 20px;
+    padding: 0px;
     opacity: 0;
     transform: translateX(-30px);
     transition: 1s ease-out;
@@ -85,7 +89,7 @@ section{
 .intro > p.hello{
     font-size: 50px;
     font-weight: 500;
-    margin: 20px 0px;
+    margin: 20px 0px 0px 0px;
 }
 
 .intro p{
@@ -98,20 +102,28 @@ section{
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 0px;
     margin-left: calc(325px + 40px);
     margin-right: calc(325px + 40px);
     border-left: 1px solid gray;
     border-right: 1px solid gray;
-    padding-bottom: 0px;
+}
+
+.section-title p{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 1px;
+    padding: 20px 20px 5px 20px;
 }
 
 .image-row{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 0 20px;
+    padding: 20px 20px;
     opacity: 0;
+    border-top: 1px solid gray;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out,
                 transform 0.8s ease-out;
@@ -176,6 +188,7 @@ section{
     top: 88px;
     right: 20px;
     opacity: 0;
+    padding: 0px;
     transform: translateX(30px);
     transition: 1s ease-out;
 }
@@ -272,7 +285,7 @@ footer .design-tag p{
 @media (max-width: 1100px){
     .content{
         flex-direction: column;
-        padding: 88px 20px 0px 20px;
+        padding: 88px 0px 0px 0px;
         gap: 40px;
     }
 
@@ -280,9 +293,14 @@ footer .design-tag p{
     .about{
         position: static;
         width: 100%;
+        max-width: 100%;
+        left: auto;
+        right: auto;
+        box-sizing: border-box;
         opacity: 1;
         transform: none;
         text-align: left;
+        padding: 0px 20px 0px 20px;
     }
 
     .about{
@@ -296,14 +314,24 @@ footer .design-tag p{
         padding: 0px;
     }
 
+    .section-title p{
+        padding: 20px 20px 5px 20px;
+    }
+
     .selected-works{
         margin: 0;
         border-left: none;
         border-right: none;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
     }
 
     .image-row{
-        padding: 0px;
+        padding: 20px;
+    }
+
+    .about{
+        padding-bottom: 40px;
     }
 
     .footer{
@@ -355,10 +383,6 @@ footer .design-tag p{
         gap: 6px;
     }
 
-    .image-row{
-        padding: 0;
-    }
-
     .image-row img{
         width: 100%;
     }
@@ -375,6 +399,10 @@ footer .design-tag p{
 
     .intro p{
         font-size: 16px;
+    }
+    
+    .image-row{
+        gap: 0px;
     }
 
     .about{
@@ -393,7 +421,7 @@ footer .design-tag p{
     footer{
         gap: 50px;
     }
-    
+
     footer > .contact-icons a, 
     footer > .design-tag p{
         font-size: 16px;
