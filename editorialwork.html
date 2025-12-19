@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek: Editorial Work</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesprojectpage.css">
+    </head>
+    <body>
+        <header>
+            <p>✸</p>
+            <nav>
+                <a href="newindex.html">Home</a>
+                <a href="newillustration.html" class="active">Illustration</a>
+                <a href="design.html">Design</a>
+                <a href="newabout.html">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <div class="title-subtitle">
+                    <p class="title">Editorial Work</p>
+                    <p class="subtitle"><strong>Magazine Images</strong> ✸ <a href="newillustration.html">Illustration</a></p>
+                </div>
+                <div class="info-description">
+                    <div class="info">
+                        <div class="info-row">
+                            <p>Year</p>
+                            <p class="strong">2024 - 2025</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Client</p>
+                            <p class="strong">ARC Magazine</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Skills</p>
+                            <p class="strong">Visual Metaphor, Narrative, Characterization</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <p>At ARC Magazine, I develop editorial illustrations that bring articles to life through narrative and visual metaphor.</p>
+                    <p>Working closely with editors, I explore multiple concepts before refining characters, expression and body language, and composition to support each story’s tone and meaning. My process is grounded in clarity and engagement, translating complex cultural topics into visuals that connect with readers while maintaining a distinct and expressive style.</p>
+                </div>
+            </div>
+            <div class="project-images">
+                <div class="image">
+                    <img src="images/illustration/EditorialWork/VictimToACrumblingDemocracy.PNG" alt="Victim To A Crumbling Democracy">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/EditorialWork/LetterToTheEditor.PNG" alt="Letter To The Editor">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/EditorialWork/TheCircleIsNotUnbroken.JPG" alt="The Circle Is Not Unbroken">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/EditorialWork/ImaginationInTheBranches.JPG" alt="Imagination In The Branches">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/EditorialWork/SpeakingOfJealousy.JPG" alt="Speaking Of Jealousy">
+                </div>
+                <section class="footer">
+                    <div class="contact-icons">
+                        <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cblazek07@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="design-tag">
+                        <p>Website Designed by Caroline Blazek ✸</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:cblazek07@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="design-tag">
+                <p>Website Designed by Caroline Blazek ✸</p>
+            </div>
+        </footer>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".image").forEach(row => {
+                observer.observe(row);
+            });
+
+            window.addEventListener("load", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
