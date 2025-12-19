@@ -198,6 +198,12 @@ section{
     padding: 20px 0;
 }
 
+.about-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
 .about p{
     font-size: 24px;
     margin: 0;
@@ -306,7 +312,7 @@ footer .design-tag p{
     .about{
         display: flex;
         flex-direction: row;
-        gap: 50px;
+        gap: 32px;
     }
 
     .about img{
@@ -366,6 +372,10 @@ footer .design-tag p{
         font-size: 18px;
     }
 
+    .about{
+        gap: 20px;
+    }
+
     .about p,
     .about a{
         font-size: 18px;
@@ -381,6 +391,10 @@ footer .design-tag p{
 
     .text{
         gap: 6px;
+    }
+
+    .image-row{
+        gap: 0px;
     }
 
     .image-row img{
@@ -424,10 +438,40 @@ footer .design-tag p{
 
     footer > .contact-icons a, 
     footer > .design-tag p{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     footer > .design-tag p{
         text-align: right;
+    }
+}
+
+@media (max-width: 370px){
+    .intro > p.hello{
+        font-size: 44px;
+    }
+
+    .description{
+        gap: 12px;
+    }
+
+    .text{
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+
+    .text p{
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    .work-type{
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .about-info p,
+    .about-info a{
+        font-size: 14px;
     }
 }

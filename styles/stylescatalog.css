@@ -300,6 +300,10 @@ footer .design-tag p{
         flex-direction: column;
     }
 
+    .text{
+        gap: 5px;
+    }
+
     .type-year p{
         font-size: 18px;
     }
@@ -336,7 +340,7 @@ footer .design-tag p{
 
     footer .contact-icons a,
     footer .design-tag p{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     footer .design-tag p{
