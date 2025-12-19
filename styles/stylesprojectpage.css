@@ -322,6 +322,17 @@ footer .design-tag p{
         font-size: 16px;
     }
 
+    .info-row{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 50px;
+        align-items: start;
+    }
+
+    .info-row p:last-child{
+        text-align: right;
+    }
+
     footer{
         gap: 50px;
     }
