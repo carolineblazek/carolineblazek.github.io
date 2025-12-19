@@ -263,11 +263,24 @@ footer .design-tag p{
         padding: 0px 20px;
     }
 
+    .intro-description p:last-child{
+        margin-bottom: 0px;
+    }
+
     .experience{
         margin: 0;
         border-left: none;
         border-right: none;
         border-top: 1px solid gray;
+    }
+
+    .experience-row{
+        flex-direction: column;
+    }
+
+    .job-image{
+        flex: auto;
+        max-width: 100%;
     }
 
     .footer{
@@ -301,10 +314,6 @@ footer .design-tag p{
     .intro p,
     .intro a{
         font-size: 18px;
-    }
-
-    .experience-row{
-        flex-direction: column;
     }
 
     .job-info p{
