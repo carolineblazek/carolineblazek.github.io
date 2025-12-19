@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek: Fashion Illustration</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesprojectpage.css">
+    </head>
+    <body>
+        <header>
+            <p>✸</p>
+            <nav>
+                <a href="newindex.html">Home</a>
+                <a href="newillustration.html" class="active">Illustration</a>
+                <a href="design.html">Design</a>
+                <a href="newabout.html">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <div class="title-subtitle">
+                    <p class="title">Fashion Illustration</p>
+                    <p class="subtitle"><strong>Fashion Drawings</strong> ✸ <a href="newillustration.html">Illustration</a></p>
+                </div>
+                <div class="info-description">
+                    <div class="info">
+                        <div class="info-row">
+                            <p>Year</p>
+                            <p class="strong">2025</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Client</p>
+                            <p class="strong">Fashion Drawing</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Skills</p>
+                            <p class="strong">Technical Flats, Croquis, Material Experimentation</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <p>These fashion illustrations tell the story of two collections with distinct moods and personalities.</p>
+                    <p><em>Lotuses in Radiant Bloom</em> captures serenity and grace through soft pastels and airy linework, while <em>Sassy and Chic</em> conveys confidence and boldness with striking black-and-white contrast. Across both collections, I experiment with a wide variety of material, from watercolor and pen to beads, fabric, and digital editing, using texture and color to bring each design to life.</p>
+                </div>
+            </div>
+            <div class="project-images">
+                <div class="image">
+                    <img src="images/illustration/FashionIllustration/LotusesInRadiantBloomCover.png" alt="Lotuses In Radiant Bloom">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/FashionIllustration/LotusesInRadiantBloomIllustration.png" alt="Lotuses In Radiant Bloom">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/FashionIllustration/LotusesInRadiantBloomFlat.png" alt="Lotuses In Radiant Bloom">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/FashionIllustration/LotusesInRadiantBloomExperimentalMaterials.jpg" alt="Lotuses In Radiant Bloom">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/FashionIllustration/SassyAndChicCover.jpg" alt="Sassy and Chic">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/FashionIllustration/SassyAndChicIllustration.png" alt="Sassy and Chic">
+                </div>
+                <div class="image">
+                    <img src="images/illustration/FashionIllustration/SassyAndChicWatercolor.png" alt="Sassy and Chic">
+                </div>
+                <section class="footer">
+                    <div class="contact-icons">
+                        <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cblazek07@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="design-tag">
+                        <p>Website Designed by Caroline Blazek ✸</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:cblazek07@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="design-tag">
+                <p>Website Designed by Caroline Blazek ✸</p>
+            </div>
+        </footer>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".image").forEach(row => {
+                observer.observe(row);
+            });
+
+            window.addEventListener("load", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
