@@ -32,6 +32,33 @@ header{
     border-bottom: 1px solid gray;
 }
 
+.logo{
+    width: auto;
+    height: 50px;
+    display: block;
+}
+
+.logo-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1.5px;
+    background-color: black;
+    opacity: 0;
+}
+
+.logo-link:hover::after {
+    opacity: 1;
+}
+
 nav{
     display: flex;
     gap: 32px;
@@ -353,6 +380,10 @@ footer .design-tag p{
     header{
         height: 70px;
         padding: 15px 16px;
+    }
+
+    .logo{
+        height: 40px;
     }
 
     header p{
