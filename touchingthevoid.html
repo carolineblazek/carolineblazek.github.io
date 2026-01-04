@@ -39,13 +39,22 @@
                         </div>
                         <hr>
                         <div class="info-row">
+                            <p>Tools</p>
+                            <p class="strong">InDesign, Photoshop</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
                             <p>Skills</p>
                             <p class="strong"> Grid-Based Layout, Type As Image, Digital Editing</p>
                         </div>
                         <hr>
                     </div>
-                    <p>This exhibition poster for <em>Touching the Void</em> at the Museum of Modern Art responds to the show’s emphasis on abstraction, bare form, and structural clarity.</p>
-                    <p>The title is treated as image through a textural, distorted interpretation in grayscale, while supplementary information, artist names and gallery talks, are organized within a rigid grid, creating a dialogue between expressive typography and structured layout. To achieve this high-contrast black-and-white imagery I physically manipulated paper through tearing, cutting, and wrinkling, then digitally refined the compositions in Photoshop.</p>
+                    <div class="description-wrapper">
+                        <p class="strong">This exhibition poster for <em>Touching the Void</em> at the Museum of Modern Art responds to the show’s emphasis on abstraction, bare form, and structural clarity.</p>
+                        <p><em>Touching the Void</em> was presented at the MoMA as part of an exhibition that explored mid-20th-century art’s shift from personal expression to structural clarity and the “poetics of bare form.” The installation was centered on geometry, reduction, and the investigation of line, plane, and volume, inviting viewers to engage with form through heightened sensory perception and objective observation rather than narrative or emotion.</p>
+                        <p>In response to the exhibition’s emphasis on restrained abstraction and structural clarity, I treated the title itself as an image, developing a richly textural, grayscale interpretation of the letterforms.</p>
+                        <p>By physically manipulating paper through tearing, cutting, and wrinkling, I generated expressive, organic values and forms, which I then refined digitally to enhance contrast and surface detail. This tactile image was set in deliberate contrast to the strict typographic grid of the supplementary information, establishing a tense dialogue between material experimentation and systematic structure.</p>
+                    </div>
                 </div>
             </div>
             <div class="project-images">
@@ -76,6 +85,16 @@
                 <div class="image">
                     <img src="images/design/TouchingTheVoid/TouchingTheVoidMotion.gif" alt="Motion Animation">
                 </div>
+                <div class="reflection-container">
+                    <div class="reflection-trigger">
+                        <span class="star-wrap">
+                            <span class="star">✸</span>
+                        </span>
+                    </div>
+                    <div class="reflection-bubble">
+                        <p>Throughout the creation of this book, I immersed myself in the study of each historical style and integrated its distinct qualities into my own visual language. I aimed to let each typographic language express its full visual potential while thoughtfully relating each spread to what preceded and followed. This approach culminated on the sixteenth and seventeenth pages, where the interplay of both styles creates an aesthetic synthesis that conveys a shift in the consideration of ornament and form.</p>
+                    </div>
+                </div>
                 <section class="footer">
                     <div class="contact-icons">
                         <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
@@ -87,6 +106,7 @@
                     </div>
                     <div class="design-tag">
                         <p>Website Designed by Caroline Blazek ✸</p>
+                        <p>Typeset in Owners by Jeremy Mickel from MCKL</p>
                     </div>
                 </section>
             </div>
@@ -107,10 +127,10 @@
         <script>
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("reveal");
-                        observer.unobserve(entry.target);
-                    }
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("reveal");
+                    observer.unobserve(entry.target);
+                }
                 });
             }, { threshold: 0.1 });
 
@@ -118,8 +138,65 @@
                 observer.observe(row);
             });
 
-            window.addEventListener("load", () => {
+            document.addEventListener("DOMContentLoaded", () => {
                 document.querySelector(".intro").classList.add("loaded");
+
+                setTimeout(() => {
+                    const reflection = document.querySelector(".reflection-container");
+                    if (reflection) reflection.classList.add("loaded");
+                }, 500);
+            });
+
+            window.addEventListener("scroll", () => {
+                const reflection = document.querySelector(".reflection-container");
+                const images = document.querySelector(".project-images");
+                if (!reflection || !images) return;
+
+                const startOffset = images.offsetTop + 400;
+                const endOffset = images.offsetTop + images.offsetHeight;
+                const scrollY = window.scrollY + window.innerHeight;
+
+                if (scrollY >= startOffset && scrollY <= endOffset) {
+                reflection.style.opacity = 1;
+                reflection.style.pointerEvents = "auto";
+                } else {
+                reflection.style.opacity = 0;
+                reflection.style.pointerEvents = "none";
+                }
+            });
+
+            const reflectionContainer = document.querySelector(".reflection-container");
+            const reflectionTrigger = document.querySelector(".reflection-trigger");
+            const starWrap = reflectionContainer.querySelector(".star-wrap");
+
+            reflectionTrigger.addEventListener("click", (e) => {
+                e.stopPropagation();
+                reflectionContainer.classList.toggle("active");
+
+                if (reflectionContainer.classList.contains("active")) {
+                starWrap.style.animation = "star-spin 2.5s linear infinite";
+                } else {
+                starWrap.style.animation = "none";
+                }
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!reflectionContainer.contains(e.target)) {
+                reflectionContainer.classList.remove("active");
+                starWrap.style.animation = "none";
+                }
+            });
+
+            reflectionTrigger.addEventListener("mouseenter", () => {
+                if (!reflectionContainer.classList.contains("active")) {
+                starWrap.style.animation = "star-spin 2.5s linear infinite";
+                }
+            });
+
+            reflectionTrigger.addEventListener("mouseleave", () => {
+                if (!reflectionContainer.classList.contains("active")) {
+                starWrap.style.animation = "none";
+                }
             });
         </script>
     </body>
