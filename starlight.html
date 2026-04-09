@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek: Emma Reimagined</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesprojectpage.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logo-link">
+                <img src="images/homeabout/designlogo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="illustration.html">Illustration</a>
+                <a href="design.html" class="active">Design</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <div class="title-subtitle">
+                    <p class="title">Emma Reimagined</p>
+                    <p class="subtitle"><strong>Dust Jacket</strong> ✸ <a href="design.html">Design</a></p>
+                </div>
+                <div class="info-description">
+                    <div class="info">
+                        <div class="info-row">
+                            <p>Year</p>
+                            <p class="strong">2025</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Client</p>
+                            <p class="strong">Typography II</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Tools</p>
+                            <p class="strong">InDesign, Photoshop</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Skills</p>
+                            <p class="strong">Staged Photography, Composition, Color</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="description-wrapper">
+                        <p>This dust jacket for <em>Emma</em> by Jane Austen reimagines the novel through staged photography and thoughtful object selection.</p>
+                        <p>Printed type, sheer fabric, glass, vines, pearls, and ribbons were arranged across multiple iterations to reflect the playful tone of the story while highlighting key characteristics of Emma’s personality. Supplemental information, including the blurb, reviews, and author's description, was set with intentional choices in typeface and a light, feminine color palette. The final design balances narrative, materiality, and visual cohesion to create a jacket that is both expressive and intriguing, inviting interaction.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-images">
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaCover.png" alt="Front Cover">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaBack.png" alt="Back Cover">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaInsideBack.png" alt="Inside Back">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaInsideFront.png" alt="Inside Front">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaOpen.png" alt="Open">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaOpenAbove.png" alt="Open Above">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaSide.png" alt="Side">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaPhotoOne.png" alt="Type As Image Photo">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaPhotoTwo.png" alt="Type As Image Photo">
+                </div>
+                <div class="image">
+                    <img src="images/design/EmmaDustJacket/EmmaPhotoThree.png" alt="Type As Image Photo">
+                </div>
+                <section class="footer">
+                    <div class="contact-icons">
+                        <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cblazek07@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="design-tag">
+                        <p>Website Designed by Caroline Blazek ✸</p>
+                        <p>Typeset in Owners by Jeremy Mickel from MCKL</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:cblazek07@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="design-tag">
+                <p>Website Designed by Caroline Blazek ✸</p>
+            </div>
+        </footer>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".image").forEach(row => {
+                observer.observe(row);
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>

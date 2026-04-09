@@ -85,16 +85,6 @@
                 <div class="image">
                     <img src="images/design/TouchingTheVoid/TouchingTheVoidMotion.gif" alt="Motion Animation">
                 </div>
-                <div class="reflection-container">
-                    <div class="reflection-trigger">
-                        <span class="star-wrap">
-                            <span class="star">✸</span>
-                        </span>
-                    </div>
-                    <div class="reflection-bubble">
-                        <p>This project challenged me to explore the dialogue between material experimentation and structured design systems. Working between hands-on making and digital refinement, I discovered how texture and imperfection can enrich clarity and order. This iterative process heightened my sensitivity to contrast, enabling me to balance expressive forms with structured layouts while remaining grounded in the exhibition’s conceptual framework.</p>
-                    </div>
-                </div>
                 <section class="footer">
                     <div class="contact-icons">
                         <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
@@ -127,10 +117,10 @@
         <script>
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("reveal");
-                    observer.unobserve(entry.target);
-                }
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
                 });
             }, { threshold: 0.1 });
 
@@ -140,63 +130,6 @@
 
             document.addEventListener("DOMContentLoaded", () => {
                 document.querySelector(".intro").classList.add("loaded");
-
-                setTimeout(() => {
-                    const reflection = document.querySelector(".reflection-container");
-                    if (reflection) reflection.classList.add("loaded");
-                }, 500);
-            });
-
-            window.addEventListener("scroll", () => {
-                const reflection = document.querySelector(".reflection-container");
-                const images = document.querySelector(".project-images");
-                if (!reflection || !images) return;
-
-                const startOffset = images.offsetTop + 400;
-                const endOffset = images.offsetTop + images.offsetHeight;
-                const scrollY = window.scrollY + window.innerHeight;
-
-                if (scrollY >= startOffset && scrollY <= endOffset) {
-                reflection.style.opacity = 1;
-                reflection.style.pointerEvents = "auto";
-                } else {
-                reflection.style.opacity = 0;
-                reflection.style.pointerEvents = "none";
-                }
-            });
-
-            const reflectionContainer = document.querySelector(".reflection-container");
-            const reflectionTrigger = document.querySelector(".reflection-trigger");
-            const starWrap = reflectionContainer.querySelector(".star-wrap");
-
-            reflectionTrigger.addEventListener("click", (e) => {
-                e.stopPropagation();
-                reflectionContainer.classList.toggle("active");
-
-                if (reflectionContainer.classList.contains("active")) {
-                starWrap.style.animation = "star-spin 2.5s linear infinite";
-                } else {
-                starWrap.style.animation = "none";
-                }
-            });
-
-            document.addEventListener("click", (e) => {
-                if (!reflectionContainer.contains(e.target)) {
-                reflectionContainer.classList.remove("active");
-                starWrap.style.animation = "none";
-                }
-            });
-
-            reflectionTrigger.addEventListener("mouseenter", () => {
-                if (!reflectionContainer.classList.contains("active")) {
-                starWrap.style.animation = "star-spin 2.5s linear infinite";
-                }
-            });
-
-            reflectionTrigger.addEventListener("mouseleave", () => {
-                if (!reflectionContainer.classList.contains("active")) {
-                starWrap.style.animation = "none";
-                }
             });
         </script>
     </body>
