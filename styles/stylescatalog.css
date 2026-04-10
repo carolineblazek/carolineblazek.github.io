@@ -243,6 +243,8 @@ section{
 
 .design-tag p{
     margin: 0;
+    text-align: right;
+    line-height: 1.2;
     font-size: 15px;
     font-weight: 400;
     color: black;
