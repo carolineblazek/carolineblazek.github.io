@@ -340,6 +340,7 @@ footer .design-tag p{
         display: flex;
         flex-direction: row;
         gap: 32px;
+        align-items: end;
     }
 
     .about img{
