@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek: In-Progress</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesinprogress.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logo-link">
+                <img src="images/homeabout/designlogo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="illustration.html">Illustration</a>
+                <a href="design.html">Design</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="project-row">
+                <div class="intro">
+                    <div class="title-subtitle">
+                        <p class="title">In-Progress ✸</p>
+                        <p class="subtitle"><strong>Take a peek at what I'm currently working on!</strong>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-info">
+                        <p class="title">How Do You Find The Words?</p>
+                        <p class="subtitle">
+                            <strong>Picture Book</strong> ✸ <span>Design</span>
+                        </p>
+                        <p class="description">
+                            A developing picture book exploring language, emotion, and care through narrative pacing and image.
+                        </p>
+                    </div>
+                    <div class="project-images">
+                        <div class="image">
+                            <img src="images/illustration/AllThatIsHeavy/AllThingsHeavyCover.JPG" alt="Front Cover">
+                        </div>
+                        <div class="image">
+                            <img src="images/illustration/AllThatIsHeavy/AllThingsHeavy2.png" alt="Spread 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:cblazek07@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="design-tag">
+                <p>Website Designed by Caroline Blazek ✸</p>
+            </div>
+        </footer>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".image").forEach(row => {
+                observer.observe(row);
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
