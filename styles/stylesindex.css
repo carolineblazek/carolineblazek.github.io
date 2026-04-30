@@ -170,12 +170,13 @@ section{
     text-decoration: underline;
 }
 
-.image-row img{
+.image-row img, .image-row video{
     width: 100%;
+    display: block;
     transition: filter 0.4s ease-out;
 }
 
-.image-row img:hover{
+.image-row img:hover, .image-row video:hover{
     filter: brightness(70%);
 }
 
@@ -431,7 +432,7 @@ footer .design-tag p{
         gap: 0px;
     }
 
-    .image-row img{
+    .image-row img, .image-row video{
         width: 100%;
     }
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek: Ritual</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesprojectpage.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logo-link">
+                <img src="images/homeabout/designlogo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="illustration.html">Illustration</a>
+                <a href="design.html" class="active">Design</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <div class="title-subtitle">
+                    <p class="title">Ritual</p>
+                    <p class="subtitle"><strong>Book</strong> ✸ <a href="design.html">Design</a></p>
+                </div>
+                <div class="info-description">
+                    <div class="info">
+                        <div class="info-row">
+                            <p>Year</p>
+                            <p class="strong">Spring 2026</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Client</p>
+                            <p class="strong">Content to Cover: Designing Books</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Tools</p>
+                            <p class="strong">InDesign, Photoshop</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Skills</p>
+                            <p class="strong">Image Manipulation & Sequencing, Pacing</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="description-wrapper">
+                        <p class="strong">This book pairs photographs from Cindy Sherman’s <em>Untitled Film Stills</em> and <em>Centerfolds</em> series with excerpts from Hélène Cixous’s "The Laugh of the Medusa," interrogating what women are conditioned to feel publicly ashamed of, and how those feelings begin to transform during private reflection.</p>
+                        <p>The sequence opens with Sherman’s images in public outdoor spaces, her constructed facades seeking societal acceptance. As I arranged these photographs, I reflected on subjects I avoid in public and how their suppression shapes my own experience of shame as a woman.</p> 
+                        <p>As the photos transition into more intimate, interior settings, the accompanying text intensifies. Here, I introduced the bleed-through concept: blackout poetry crafted from Cixous’s writing on shortsheets, where the censored text on the front emerges on the reverse. This effect exposes powerful, explicit language, mirroring the way suppressed feelings surface when attempts at concealment fail.</p>
+                        <p>Cut images from <em>Untitled Film Stills</em> are paired with the intense color photography of Sherman’s <em>Centerfolds</em> series, their identities manipulated through blind-like rectangles that restrict vision. This book has become a meditation on concealment and revelation within womanhood, reclaiming pride in what I was once taught to hide in shame.</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="project-images">
+                <div class="image">
+                    <video autoplay loop muted playsinline poster="images/design/Ritual/Ritual7.png">
+                        <source src="images/design/Ritual/RitualGIF.mp4" type="video/mp4" alt="Ritual">
+                    </video>
+                </div>
+                <div class="image">
+                    <img src="images/design/Ritual/Ritual7.png" alt="Covers">
+                </div>
+                <div class="image">
+                    <img src="images/design/Ritual/Ritual6.png" alt="Spread">
+                </div>
+                <div class="image">
+                    <img src="images/design/Ritual/Ritual1.png" alt="Spread">
+                </div>
+                <div class="image">
+                    <img src="images/design/Ritual/Ritual2.png" alt="Spread">
+                </div>
+                <div class="image">
+                    <img src="images/design/Ritual/Ritual3.png" alt="Spread">
+                </div>
+                <div class="image">
+                    <img src="images/design/Ritual/Ritual5.png" alt="Accordion Display">
+                </div>
+                <section class="footer">
+                    <div class="contact-icons">
+                        <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cblazek07@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="design-tag">
+                        <p>Website Designed by Caroline Blazek ✸</p>
+                        <p>Typeset in Owners by Jeremy Mickel from MCKL</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer> 
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:cblazek07@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="design-tag">
+                <p>Website Designed by Caroline Blazek ✸</p>
+            </div>
+        </footer>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".image").forEach(row => {
+                observer.observe(row);
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
