@@ -195,6 +195,7 @@ section{
 .experience-row > .experience-info{
     font-size: 15px;
     font-weight: 400;
+    letter-spacing: .07rem;
 }
 
 .footer{
