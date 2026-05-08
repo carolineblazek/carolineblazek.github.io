@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caroline Blazek: What Would I Do Without This?</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="styles/stylesprojectpage.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logo-link">
+                <img src="images/homeabout/designlogo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="illustration.html">Illustration</a>
+                <a href="design.html" class="active">Design</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="intro">
+                <div class="title-subtitle">
+                    <p class="title">What Would I Do Without This?</p>
+                    <p class="subtitle"><strong>Book</strong> ✸ <a href="design.html">Design</a></p>
+                </div>
+                <div class="info-description">
+                    <div class="info">
+                        <div class="info-row">
+                            <p>Year</p>
+                            <p class="strong">Spring 2026 (3 weeks)</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Client</p>
+                            <p class="strong">Content to Cover: Designing Books</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Tools</p>
+                            <p class="strong">InDesign, Photoshop</p>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <p>Skills</p>
+                            <p class="strong">Book Binding, Experiential Design, Image Manipulation</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="description-wrapper">
+                        <p class="strong">This interactive book analyzes everyday items as objects of deeply personal feelings and tendencies, using my own bag as a personal reflection of my habits, preferences, and flaws.</p>
+                        <p>Each page contains, on the front side, a surface-level description of how I obtained the given object and why I choose to carry it with me every day. On the back, I reflect deeply on what I would do without this item, and decide if I would continue to keep carrying it or let it go.</p> 
+                        <p>To elevate this meditation on simple objects, I wanted the experience of this book to reflect the chaotic and sometimes stressful feeling of digging through my bag in search for a specific object. I adjusted each page to the size of the respective object and cut the silhouette of each image to be recognizable by touch, the sense most used when hurriedly searching for an item.</p>
+                        <p>Each item has additionally been categorized and color-coded by purpose, reflecting my own impulses to strictly organize that which I find overwhelming and confusing. I found deeper thinking on these everyday items to be very interesting and thought-provoking, as I found myself writing a large portion for things I had thought to be fairly straightforward.</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="project-images">
+                <div class="image">
+                    <img src="images/design/WhatWouldIDo/WhatWouldIDoWithoutThis-.gif" alt="Full Book">
+                </div>
+                <div class="image">
+                    <video autoplay loop muted playsinline poster="images/design/WhatWouldIDo/Spread.png">
+                        <source src="images/design/WhatWouldIDo/BookDemonstration.mp4" type="video/mp4" alt="Book Demonstration">
+                    </video>
+                </div>
+                <div class="image">
+                    <img src="images/design/WhatWouldIDo/Cover.png" alt="Cover">
+                </div>
+                <div class="image">
+                    <img src="images/design/WhatWouldIDo/Spread.png" alt="Spread">
+                </div>
+                <div class="image">
+                    <img src="images/design/WhatWouldIDo/Spread2.png" alt="Spread">
+                </div>
+                <section class="footer">
+                    <div class="contact-icons">
+                        <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:cblazek07@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="design-tag">
+                        <p>Website Designed by Caroline Blazek ✸</p>
+                        <p>Typeset in Owners by Jeremy Mickel from MCKL</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer> 
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/caroline-blazek" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:cblazek07@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="design-tag">
+                <p>Website Designed by Caroline Blazek ✸</p>
+            </div>
+        </footer>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".image").forEach(row => {
+                observer.observe(row);
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector(".intro").classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
