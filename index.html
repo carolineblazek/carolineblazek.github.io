@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
         <title>Caroline Blazek</title>
         <meta name="description" content="Caroline Blazek is a designer, illustrator, and social media manager based in St. Louis.">
         <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
@@ -13,8 +14,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arbutus&family=Bayon&family=Butterfly+Kids&family=Great+Vibes&family=Griffy&family=Henny+Penny&family=Idiqlat&family=Indie+Flower&family=Ingrid+Darling&family=Limelight&family=Marck+Script&family=Miltonian+Tattoo&family=New+Rocker&family=Tillana&text=CarolineBzk&display=swap">
         <!-- Hover faces for ILLUSTRATOR (Barrio) and SOCIAL MEDIA MANAGER (Cal Sans), subset to those words. DESIGNER uses Instrument Serif, already loaded. -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barrio&family=Cal+Sans&text=ILLUSTRATORSOCIALMEDIAMANAGERillustratorsocialmediamanager&display=swap">
-        <link rel="stylesheet" href="styles/base.css">
-        <link rel="stylesheet" href="styles/stylesindex.css">
+        <link rel="stylesheet" href="styles/base.css?v=20260921">
+        <link rel="stylesheet" href="styles/stylesindex.css?v=20260921">
+        <script src="scripts/home.js?v=20260921" defer></script>
     </head>
     <body id="top">
         <header class="site-header">
@@ -27,8 +29,8 @@
 
         <main>
             <section class="hero">
-                <h1 class="wordmark" aria-label="Caroline Blazek"><span aria-hidden="true"><span class="wm-letter" style="--alt: 'Ingrid Darling'">C</span><span class="wm-letter" style="--alt: 'Henny Penny'">a</span><span class="wm-letter" style="--alt: 'Limelight'">r</span><span class="wm-letter" style="--alt: 'New Rocker'">o</span><span class="wm-letter" style="--alt: 'Tillana'">l</span><span class="wm-letter" style="--alt: 'Indie Flower'">i</span><span class="wm-letter" style="--alt: 'Arbutus'">n</span><span class="wm-letter" style="--alt: 'Bayon'">e</span><span class="wm-space"> </span><span class="wm-letter" style="--alt: 'Great Vibes'">B</span><span class="wm-letter" style="--alt: 'Idiqlat'">l</span><span class="wm-letter" style="--alt: 'Griffy'">a</span><span class="wm-letter" style="--alt: 'Butterfly Kids'">z</span><span class="wm-letter" style="--alt: 'Marck Script'">e</span><span class="wm-letter" style="--alt: 'Miltonian Tattoo'">k</span></span></h1>
-                <p class="tagline">is a <span class="role" style="--alt: 'Instrument Serif'; --alt-size: 1.12em">designer</span>, <span class="role" style="--alt: 'Barrio'">illustrator</span>, and <span class="role" style="--alt: 'Cal Sans'">social media manager</span><br class="tagline-break">based in St. Louis.</p>
+                <h1 class="wordmark" aria-label="Caroline Blazek"><span aria-hidden="true"><span class="wm-letter" data-alt="Ingrid Darling">C</span><span class="wm-letter" data-alt="Henny Penny">a</span><span class="wm-letter" data-alt="Limelight">r</span><span class="wm-letter" data-alt="New Rocker">o</span><span class="wm-letter" data-alt="Tillana">l</span><span class="wm-letter" data-alt="Indie Flower">i</span><span class="wm-letter" data-alt="Arbutus">n</span><span class="wm-letter" data-alt="Bayon">e</span><span class="wm-space"> </span><span class="wm-letter" data-alt="Great Vibes">B</span><span class="wm-letter" data-alt="Idiqlat">l</span><span class="wm-letter" data-alt="Griffy">a</span><span class="wm-letter" data-alt="Butterfly Kids">z</span><span class="wm-letter" data-alt="Marck Script">e</span><span class="wm-letter" data-alt="Miltonian Tattoo">k</span></span></h1>
+                <p class="tagline">is a <span class="role" data-alt="Instrument Serif" data-alt-size="1.12em">designer</span>, <span class="role" data-alt="Barrio">illustrator</span>, and <span class="role" data-alt="Cal Sans">social media manager</span><br class="tagline-break">based in St. Louis.</p>
             </section>
 
             <section class="work" aria-label="Selected works">
@@ -123,44 +125,5 @@
             <a href="#top" class="footer-to-top" aria-label="Back to top">↑</a>
         </footer>
 
-        <script>
-            // Type swap — wordmark letters and the three roles. Each is measured in both its faces once the
-            // fonts are in; it sits at its Instrument Serif width by default and eases
-            // to its other face's width on hover, so neighbours slide aside.
-            (function () {
-                const letters = document.querySelectorAll(".wm-letter, .role");
-
-                // The alternate faces are never on screen at rest, so the browser
-                // won't fetch them on its own. An invisible copy of each letter,
-                // set in its --alt face, makes it ask for them.
-                const warm = document.createElement("span");
-                warm.setAttribute("aria-hidden", "true");
-                warm.style.cssText = "position:absolute;left:-9999px;top:0;visibility:hidden;pointer-events:none";
-                letters.forEach(l => {
-                    const s = document.createElement("span");
-                    s.textContent = l.textContent;
-                    s.style.fontFamily = l.style.getPropertyValue("--alt") + ", serif";
-                    warm.appendChild(s);
-                });
-                document.body.appendChild(warm);
-                void warm.offsetWidth; // force layout so the requests go out now
-
-                function measure() {
-                    letters.forEach(l => {
-                        l.style.removeProperty("--w-base");
-                        l.style.removeProperty("--w-alt");
-                        const base = l.getBoundingClientRect().width;
-                        l.classList.add("is-alt");            // same styles as :hover
-                        const alt = l.getBoundingClientRect().width;
-                        l.classList.remove("is-alt");
-                        l.style.setProperty("--w-base", base + "px");
-                        l.style.setProperty("--w-alt", alt + "px");
-                    });
-                }
-                document.fonts.ready.then(measure);
-                document.fonts.addEventListener("loadingdone", measure); // any late arrivals
-                window.addEventListener("resize", measure);
-            })();
-        </script>
     </body>
 </html>
