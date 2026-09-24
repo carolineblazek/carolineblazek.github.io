@@ -58,6 +58,18 @@ img{
     text-transform: uppercase;
 }
 
+/* Section label — mono, above a block of copy (project pages, about page) */
+.section-label{
+    margin: 0;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
 /* ---------- Header ---------- */
 
 .site-header{

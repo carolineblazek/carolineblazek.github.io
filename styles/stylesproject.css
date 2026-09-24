@@ -265,18 +265,6 @@
     color: var(--ink);
 }
 
-/* Section labels beside the later images */
-.section-label{
-    margin: 0;
-    font-family: var(--font-mono);
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink);
-}
-
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1100px){
