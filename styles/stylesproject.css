@@ -26,6 +26,12 @@
     text-transform: uppercase;
 }
 
+/* The same links repeated after the last row */
+.project-nav--bottom{
+    margin-top: 40px;
+    padding-bottom: 0;
+}
+
 .project-nav a:hover{
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
@@ -70,6 +76,7 @@
 /* When a slot crops an image, choose which edge stays in frame (default is centre) */
 .fit-top{    object-position: top; }
 .fit-bottom{ object-position: bottom; }
+.fit-upper{  object-position: center 22%; }   /* between top and centre */
 
 .row--trio img,
 .row--trio video{
@@ -95,7 +102,11 @@
     grid-template-columns: 1fr;
 }
 
+/* Sized so the whole page and its controls fit in the window together */
 .flipbook{
+    justify-self: center;
+    width: 100%;
+    max-width: min(1040px, calc((100svh - 160px) * 16 / 9));
     margin: 0;
     outline: none;
 }
@@ -108,7 +119,7 @@
 .flipbook-page{
     aspect-ratio: 16 / 9;
     object-fit: contain;
-    cursor: e-resize;
+    cursor: zoom-in;
 }
 
 .flipbook-bar{
@@ -265,6 +276,113 @@
     color: var(--ink);
 }
 
+/* ---------- Lightbox (click a photo or video to see it full screen) ---------- */
+
+.zoomable{
+    cursor: zoom-in;
+}
+
+.lightbox{
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgba(12, 12, 12, 0.94);
+}
+
+.lightbox[open]{
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox::backdrop{
+    background: transparent;
+}
+
+body:has(.lightbox[open]){
+    overflow: hidden;
+}
+
+.lightbox-media{
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px var(--margin);
+}
+
+.lightbox-media img,
+.lightbox-media video{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius);
+}
+
+.lightbox-close{
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    margin: 0;
+    padding: 4px 10px;
+    border: 0;
+    background: none;
+    font-family: var(--font-sans);
+    font-size: 40px;
+    line-height: 1;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.lightbox-close:hover{
+    opacity: 0.7;
+}
+
+/* Slideshow controls, styled like the bar under the slideshow */
+.lightbox-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 0 var(--margin) 32px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+}
+
+.lightbox-nav[hidden]{
+    display: none;
+}
+
+.lightbox-nav button{
+    margin: 0;
+    padding: 4px 8px;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 22px;
+    color: inherit;
+    cursor: pointer;
+}
+
+.lightbox-nav button:hover{
+    opacity: 0.7;
+}
+
+.lightbox-media:has(+ .lightbox-nav:not([hidden])){
+    padding-bottom: 24px;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1100px){
@@ -288,9 +406,16 @@
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .row--trio,
-    .row--reels{
-        grid-template-columns: 1fr 1fr;   /* two-up, the third wraps below */
+    /* Rows of three stay three across, just smaller */
+    .row.row--trio,
+    .row.row--reels{
+        gap: 10px;
+    }
+
+    .row--trio img,
+    .row--trio video,
+    .row--reels video{
+        border-radius: 10px;
     }
 
     .row--single img{
