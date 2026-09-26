@@ -76,7 +76,10 @@
 /* When a slot crops an image, choose which edge stays in frame (default is centre) */
 .fit-top{    object-position: top; }
 .fit-bottom{ object-position: bottom; }
-.fit-upper{  object-position: center 22%; }   /* between top and centre */
+.fit-upper{  object-position: center 25%; }
+.fit-middle{ object-position: center 60%; }
+.fit-lower-middle{ object-position: center 55%; }
+.fit-right{ object-position: right; }
 
 .row--trio img,
 .row--trio video{
@@ -206,6 +209,30 @@
     letter-spacing: 0.02em;
 }
 
+/* Links inside project copy (e.g. a photo credit) */
+.project-copy a{
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.project-copy a:hover{
+    color: var(--gray);
+}
+
+.project-copy .project-credit{
+    color: var(--gray);
+}
+
+.project-copy .project-credit a{
+    color: var(--ink);
+}
+
+.project-copy .project-credit a:hover{
+    color: var(--gray);
+}
+
 /* Title block: title + meta (5px apart), then the tool pills (10px below) */
 .project-heading{
     display: flex;
@@ -272,7 +299,7 @@
     font-size: 15px;
     font-weight: 600;
     line-height: 16px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     color: var(--ink);
 }
 
@@ -461,7 +488,7 @@ body:has(.lightbox[open]){
 
     .project-tools li{
         font-size: 13px;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.04em;
     }
 
     .project-title{
