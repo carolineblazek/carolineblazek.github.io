@@ -1,0 +1,108 @@
+/* ------------------------------------------------------------------
+   "More" — work shown as one or two images rather than a full page.
+   A loose two-column flow: each piece keeps its own proportions and sits
+   at its own width, so the page scatters instead of marching in a grid.
+   Shared styles (variables, header, footer, section-label) are in base.css.
+   ------------------------------------------------------------------ */
+
+.more{
+    padding: 40px var(--margin) 100px;
+}
+
+/* A two-column grid that fills ROW BY ROW, so pieces read left to right
+   as you scroll. Each sits at the top of its row at its own width, which
+   is what keeps the page scattered rather than tabular. */
+.more-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+    row-gap: 72px;
+    align-items: start;
+}
+
+.more-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Images keep their own aspect ratio — nothing is cropped on this page */
+.more-item img,
+.more-item video{
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    background-color: #e9e9e9;
+}
+
+.more-item figcaption{
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-wrap: balance;
+}
+
+.more-item figcaption span{
+    display: block;
+    color: var(--gray);
+}
+
+/* The composition. Each piece sits at its own width and drops its own
+   distance down the page, so the two columns never line up. Order matches
+   the figures in more.html. */
+.more-item:nth-child(1){ width: 56%; }                                    /* Reckless */
+.more-item:nth-child(2){ width: 86%; margin-left: 14%; margin-top: 90px; } /* What Would I Do */
+.more-item:nth-child(3){ width: 78%; margin-top: 50px; }                  /* Living Pattern */
+.more-item:nth-child(4){ width: 64%; margin-left: 12%; margin-top: 140px; }/* Emma */
+.more-item:nth-child(5){ width: 84%; margin-top: 20px; }                  /* Deutscher Kalender */
+.more-item:nth-child(6){ width: 70%; margin-left: 22%; margin-top: 120px; }/* Valentine's */
+.more-item:nth-child(7){ width: 88%; margin-top: 60px; }                  /* Vessels & Vines */
+.more-item:nth-child(8){ width: 74%; margin-left: 8%; margin-top: 150px; } /* Birth of the White Rose */
+.more-item:nth-child(9){ width: 78%; margin-top: 90px; }
+.more-item:nth-child(10){ width: 84%; margin-left: 12%; margin-top: 150px; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px){
+    .more-grid{
+        column-gap: 72px;
+        row-gap: 72px;
+    }
+}
+
+@media (max-width: 820px){
+    .more{
+        padding-bottom: 64px;
+    }
+
+    .more-grid{
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 56px;
+    }
+
+    /* one column — every piece on the full measure, no offsets */
+    .more-item,
+    .more-item:nth-child(n){
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        gap: 16px;
+    }
+
+    /* the one upright video would otherwise fill the whole screen */
+    .more-item:nth-child(1){
+        width: 72%;
+    }
+}
+
+@media (max-width: 480px){
+    .more-item figcaption{
+        font-size: 12px;
+    }
+}
