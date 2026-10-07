@@ -32,9 +32,12 @@
         nav.hidden = true;
         const copy = el.cloneNode(false);
         ["class", "loading", "tabindex", "role"].forEach(a => copy.removeAttribute(a));
+        // Project-page videos are encoded without an audio track, so there is
+        // nothing to unmute here. Reckless is the one clip that keeps sound,
+        // and it has its own toggle on the More page.
         if (copy.tagName === "VIDEO") {
             copy.muted = true;
-            copy.controls = true;   // lets the viewer unmute or scrub
+            copy.controls = true;   // scrubbing
             copy.loop = true;
             copy.playsInline = true;
         }

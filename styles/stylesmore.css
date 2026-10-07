@@ -56,16 +56,19 @@
 /* The composition. Each piece sits at its own width and drops its own
    distance down the page, so the two columns never line up. Order matches
    the figures in more.html. */
-.more-item:nth-child(1){ width: 56%; }                                    /* Reckless */
+/* Odd items land in the left column, even in the right, so only the even
+   rules carry a margin-left. Keep that alternation if the order changes. */
+.more-item:nth-child(1){ width: 56%; }                                     /* Reckless */
 .more-item:nth-child(2){ width: 86%; margin-left: 14%; margin-top: 90px; } /* What Would I Do */
-.more-item:nth-child(3){ width: 78%; margin-top: 50px; }                  /* Living Pattern */
+.more-item:nth-child(3){ width: 78%; margin-top: 50px; }                   /* Living Pattern */
 .more-item:nth-child(4){ width: 64%; margin-left: 12%; margin-top: 140px; }/* Emma */
-.more-item:nth-child(5){ width: 84%; margin-top: 20px; }                  /* Deutscher Kalender */
-.more-item:nth-child(6){ width: 70%; margin-left: 22%; margin-top: 120px; }/* Valentine's */
-.more-item:nth-child(7){ width: 88%; margin-top: 60px; }                  /* Vessels & Vines */
-.more-item:nth-child(8){ width: 74%; margin-left: 8%; margin-top: 150px; } /* Birth of the White Rose */
-.more-item:nth-child(9){ width: 78%; margin-top: 90px; }
-.more-item:nth-child(10){ width: 84%; margin-left: 12%; margin-top: 150px; }
+.more-item:nth-child(5){ width: 84%; margin-top: 20px; }                   /* Die Moderne Denkmalkultus */
+.more-item:nth-child(6){ width: 70%; margin-left: 22%; margin-top: 120px; }/* Deutscher Kalender */
+.more-item:nth-child(7){ width: 88%; margin-top: 60px; }                   /* Valentine's */
+.more-item:nth-child(8){ width: 74%; margin-left: 8%; margin-top: 150px; } /* Vessels & Vines */
+.more-item:nth-child(9){ width: 78%; margin-top: 90px; }                   /* ARC Magazine */
+.more-item:nth-child(10){ width: 84%; margin-left: 12%; margin-top: 150px; }/* Witches */
+.more-item:nth-child(11){ width: 72%; margin-top: 70px; }                  /* Birth of the White Rose */
 
 /* ---------- Responsive ---------- */
 
@@ -105,4 +108,46 @@
     .more-item figcaption{
         font-size: 12px;
     }
+}
+
+/* ---------- Sound toggle (Reckless is the only clip with audio) ---------- */
+
+.more-media{
+    position: relative;
+    line-height: 0;   /* no gap under the video */
+}
+
+.sound-toggle{
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    margin: 0;
+    padding: 7px 12px;
+    border: var(--rule-weight) solid rgba(252, 252, 252, 0.55);
+    border-radius: 80px;
+    background-color: rgba(17, 17, 17, 0.45);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Expands the tap target to ~44px without changing how the pill looks */
+.sound-toggle::after{
+    content: "";
+    position: absolute;
+    inset: -9px -6px;
+}
+
+.sound-toggle:hover,
+.sound-toggle:focus-visible{
+    background-color: rgba(17, 17, 17, 0.72);
+    border-color: #ffffff;
 }

@@ -11,7 +11,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=IBM+Plex+Mono:wght@600&display=swap">
         <link rel="stylesheet" href="styles/base.css?v=20260930">
-        <link rel="stylesheet" href="styles/stylesmore.css?v=20260930f">
+        <link rel="stylesheet" href="styles/stylesmore.css?v=20261007">
+        <script src="scripts/sound-toggle.js?v=20261007" defer></script>
     </head>
     <body id="top">
         <header class="site-header">
@@ -26,24 +27,35 @@
             <div class="more-grid">
 
                 <figure class="more-item">
-                    <video src="images/web/design/RecklessTypeface/reckless.mp4"
-                           poster="images/web/design/RecklessTypeface/reckless-poster.jpg"
-                           autoplay muted loop playsinline preload="metadata"
-                           aria-label="Reckless typeface specimen, animated"></video>
+                    <div class="more-media">
+                        <video src="images/web/design/RecklessTypeface/reckless.mp4"
+                               poster="images/web/design/RecklessTypeface/reckless-poster.jpg"
+                               autoplay muted loop playsinline preload="metadata" data-sound
+                               aria-label="Reckless typeface specimen, animated"></video>
+                    </div>
                     <figcaption>Reckless<span>Typeface Motion Teaser ✸ 2026</span></figcaption>
                 </figure>
 
                 <figure class="more-item">
                     <img src="images/web/design/WhatWouldIDo/cover.jpg" alt="What Would I Do Without This?, cover" loading="lazy">
-                    <video src="images/web/design/WhatWouldIDo/BookDemonstration.mp4"
-                           poster="images/web/design/WhatWouldIDo/spread2.jpg"
+                    <video src="images/web/design/WhatWouldIDo/book-demonstration.mp4"
+                           poster="images/web/design/WhatWouldIDo/book-demonstration-poster.jpg"
                            autoplay muted loop playsinline preload="metadata"
-                           aria-label="Reckless typeface specimen, animated"></video>
+                           aria-label="What Would I Do Without This?, the book being handled"></video>
                     <figcaption>What Would I Do Without This?<span>Interactive Book ✸ 2026</span></figcaption>
                 </figure>
 
                 <figure class="more-item">
-                    <img src="images/web/design/LivingPattern/cover.jpg" alt="The Living Pattern, cover" loading="lazy">
+                    <video src="images/web/design/DieModerneDenkmalkultus/denkmalkultus.mp4"
+                           poster="images/web/design/DieModerneDenkmalkultus/denkmalkultus-poster.jpg"
+                           autoplay muted loop playsinline preload="metadata"
+                           aria-label="Die Moderne Denkmalkultus, book flipthrough"></video>
+                    <img src="images/web/design/DieModerneDenkmalkultus/minibookopen.jpg" alt="Die moderne Denkmalkultus, a bilingual spread over standing stones" loading="lazy">
+                    <figcaption>Die Moderne Denkmalkultus<span>Book ✸ 2026</span></figcaption>
+                </figure>
+
+                <figure class="more-item">
+                    <img src="images/web/design/LivingPattern/living-pattern.gif" alt="The Living Pattern, cover" loading="lazy">
                     <img src="images/web/design/LivingPattern/spread2.jpg" alt="The Living Pattern, Ornament spread" loading="lazy">
                     <figcaption>The Living Pattern<span>Accordion Book ✸ 2025</span></figcaption>
                 </figure>

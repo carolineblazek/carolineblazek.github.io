@@ -147,8 +147,10 @@
 }
 
 .flipbook-bar button{
-    margin: 0;
-    padding: 0;
+    /* 8x20 glyph, but padding makes the tap target 44x44 for touch;
+       the negative margin keeps it looking the same as before */
+    margin: -12px -18px;
+    padding: 12px 18px;
     border: 0;
     background: none;
     font: inherit;
@@ -447,6 +449,14 @@ body:has(.lightbox[open]){
 
     .row--single img{
         aspect-ratio: 620 / 420;
+    }
+
+    /* A cropped video is unreadable at phone width — show the whole frame */
+    .row--wide-left video,
+    .row--wide-right video{
+        aspect-ratio: auto;
+        height: auto;
+        object-fit: contain;
     }
 
     .row{

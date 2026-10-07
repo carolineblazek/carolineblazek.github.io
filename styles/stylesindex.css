@@ -26,6 +26,12 @@
 /* Each letter carries its own display face in --alt (set inline in the HTML).
    A small script measures the letter in both faces and stores --w-base / --w-alt;
    the width eases between them on hover so the neighbouring letters slide aside. */
+/* Keeps a line break from ever landing between two letters of a name */
+.wm-word{
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .wm-letter{
     display: inline-block;
     width: var(--w-base, auto);
@@ -224,6 +230,11 @@
 }
 
 @media (max-width: 480px){
+    /* 56px is wider than a 320px screen can hold — scale with the viewport down there */
+    .wordmark{
+        font-size: clamp(42px, 15vw, 56px);
+    }
+
     .card-meta{
         font-size: 12px;
         gap: 12px;
