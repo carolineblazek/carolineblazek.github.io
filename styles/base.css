@@ -192,6 +192,115 @@ img{
     text-underline-offset: 4px;
 }
 
+/* The lightbox is shared: project pages and the More page both use it,
+   so it lives here rather than in a page-specific sheet. */
+/* ---------- Lightbox (click a photo or video to see it full screen) ---------- */
+
+.zoomable{
+    cursor: zoom-in;
+}
+
+.lightbox{
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgba(12, 12, 12, 0.94);
+}
+
+.lightbox[open]{
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox::backdrop{
+    background: transparent;
+}
+
+body:has(.lightbox[open]){
+    overflow: hidden;
+}
+
+.lightbox-media{
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px var(--margin);
+}
+
+.lightbox-media img,
+.lightbox-media video{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius);
+}
+
+.lightbox-close{
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    margin: 0;
+    padding: 4px 10px;
+    border: 0;
+    background: none;
+    font-family: var(--font-sans);
+    font-size: 40px;
+    line-height: 1;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.lightbox-close:hover{
+    opacity: 0.7;
+}
+
+/* Slideshow controls, styled like the bar under the slideshow */
+.lightbox-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 0 var(--margin) 32px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+}
+
+.lightbox-nav[hidden]{
+    display: none;
+}
+
+.lightbox-nav button{
+    margin: 0;
+    padding: 4px 8px;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 22px;
+    color: inherit;
+    cursor: pointer;
+}
+
+.lightbox-nav button:hover{
+    opacity: 0.7;
+}
+
+.lightbox-media:has(+ .lightbox-nav:not([hidden])){
+    padding-bottom: 24px;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1100px){

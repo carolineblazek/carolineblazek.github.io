@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <title>FulcrumQ — Caroline Blazek</title>
+        <meta name="description" content="Client dashboard and AI tool interfaces for FulcrumQ, from platform audit through a three-mode colour system to developer handoff.">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=IBM+Plex+Mono:wght@600&display=swap">
+        <link rel="stylesheet" href="styles/base.css?v=20261013">
+        <link rel="stylesheet" href="styles/stylesproject.css?v=20261013">
+        <script src="scripts/lightbox.js?v=20261013" defer></script>
+    </head>
+    <body id="top">
+        <header class="site-header">
+            <nav class="site-nav" aria-label="Primary">
+                <a href="index.html" class="is-active">Selected Works</a>
+                <a href="more.html">More</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+
+        <main class="project">
+            <nav class="project-nav" aria-label="Adjacent projects">
+                <a href="ritual.html" rel="prev">← Previous</a>
+                <a href="katonahwine.html" rel="next">Next →</a>
+            </nav>
+
+            <div class="project-sections">
+
+                <section class="row row--wide-left">
+                    <img class="fit-whole" src="images/web/design/FulcrumQ/hero.jpg" alt="The FulcrumQ client dashboard shown as layered browser windows against a purple field" loading="eager">
+                    <div class="project-copy">
+                        <div class="project-heading">
+                            <div class="project-title-group">
+                                <h1 class="project-title">FulcrumQ</h1>
+                                <p class="project-meta">
+                                    <span class="project-type">Web Design</span>
+                                    <span class="project-star" aria-hidden="true">✸</span>
+                                    <span class="project-year">2026</span>
+                                </p>
+                            </div>
+                            <ul class="project-tools" aria-label="Tools">
+                                <li>UX Design</li>
+                                <li>Information Architecture</li>
+                                <li>Design Systems</li>
+                            </ul>
+                        </div>
+                        <p>As a UX & Product Design Intern at FulcrumQ, I redesigned the client dashboard and designed six AI-powered tools used by consultants to analyze talent and organizational performance. The project focused on making a complex platform easier to navigate while creating a more consistent experience across its different tools.</p>
+
+                        <p>Working closely with my advisor, developers, the CEO, and other team members, I explored dashboard layouts, established a shared visual system, and designed detailed interfaces for each tool. From early iterations to developer-ready Figma screens, my work covered both the overall platform experience and the individual workflows within it.</p>
+                    </div>
+                </section>
+
+                <section class="row row--single">
+                    <img class="fit-whole" src="images/web/design/FulcrumQ/three-modes.jpg" alt="The dashboard in its three modes: light, FulcrumQ purple, and dark" loading="lazy">
+                </section>
+
+                <section class="row row--wide-right">
+                    <div class="project-copy">
+                        <h2 class="section-label">Objective</h2>
+                        <p>FulcrumQ’s existing dashboard required users to select a client before reaching their projects, even though most users worked with only one client. Core applications were tucked inside individual projects, while AI tools lived in the sidebar, making important features less direct to access. The result was a fragmented experience, particularly for workspaces with only one or two projects.</p>
+
+                        <p>My goal was to bring core applications and AI tools closer to the client landing page, reduce unnecessary navigation, and create a layout that could accommodate different numbers of projects and applications. The dashboard also needed to express the FulcrumQ brand while maintaining clear hierarchy and legibility across a data-heavy interface.</p>
+                    </div>
+                    <img class="fit-whole" src="images/web/design/FulcrumQ/ai-tools.jpg" alt="Six AI tools: JTBD Generator, Analyzer and Validator, Hogan Analysis, Interview Insights, and Company Research" loading="lazy">
+                </section>
+
+                <section class="row row--pair">
+                    <img class="fit-whole" src="images/web/design/FulcrumQ/ai-interaction.jpg" alt="Two steps of an AI tool: a set-up dialog and a refine view with an inline chat panel" loading="lazy">
+                    <img class="fit-whole" src="images/web/design/FulcrumQ/deep-dives.jpg" alt="Detail panels: interview themes, Hogan scores, and an analyzed JTBD statement" loading="lazy">
+                </section>
+
+                <section class="row row--wide-left">
+                    <img class="fit-whole" src="images/web/design/FulcrumQ/dashboard-iterations.jpg" alt="An isometric wall of client dashboard iterations" loading="lazy">
+                    <div class="project-copy">
+                        <h2 class="section-label">Approach</h2>
+                        <p>I explored multiple dashboard directions, developing 16 iterations before narrowing the options to a Bento-style layout and a project-forward list. I tested both against realistic scenarios, from a single project with one application to workspaces containing multiple projects and mixed applications. The project-forward layout handled these variations more clearly, so I refined it with wrapping application chips, visible active applications, and a more direct hierarchy for tools and project actions.</p>
+
+                        <p>With the dashboard structure established, I developed a shared visual system and explored different color treatments, navigation patterns, and theme options. I then designed six AI tools around a split workspace, with a run list on the left and detailed results on the right. Setup and refinement modals let users preview expected outputs and adjust AI-generated results, while shared components, status indicators, and typography kept the experience consistent across tools.</p>
+                    </div>
+                </section>
+
+                <section class="row row--wide-right">
+                    <div class="project-copy">
+                        <h2 class="section-label">Results</h2>
+                        <p>I delivered developer-ready Figma screens for the redesigned client dashboard, including three visual themes and a top-navigation system, alongside detailed layouts and interaction specifications for all six AI tools. The updated dashboard removes the separate client-selection step, surfaces AI tools on the landing page, and lets users launch active core applications directly from project rows.</p>
+
+                        <p>Across the platform, reusable components and shared interaction patterns create a consistent foundation without forcing every tool into the same content structure. The split workspace supports reviewing individual runs and their results, while the setup and refinement flows provide clearer points for users to understand and interact with AI-generated analysis. The handoff gave the development team a defined interface system to build from.</p>
+                    </div>
+                    <img class="fit-whole" src="images/web/design/FulcrumQ/design-process.jpg" alt="Design process chart: understand, explore, stress-test, systemize, scale, ship" loading="lazy">
+                </section>
+
+            </div>
+
+            <nav class="project-nav project-nav--bottom" aria-label="Adjacent projects">
+                <a href="ritual.html" rel="prev">← Previous</a>
+                <a href="katonahwine.html" rel="next">Next →</a>
+            </nav>
+        </main>
+
+        <footer class="site-footer">
+            <p class="footer-copyright">© 2026 Caroline Blazek</p>
+            <a href="mailto:cblazek07@gmail.com" class="footer-contact">Contact</a>
+            <a href="#top" class="footer-to-top" aria-label="Back to top">↑</a>
+        </footer>
+    </body>
+</html>

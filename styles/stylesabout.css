@@ -25,7 +25,6 @@
     width: 100%;
     aspect-ratio: var(--portrait);
     object-fit: cover;
-    object-position: center 25%;
     border-radius: var(--radius);
     background-color: #e9e9e9;
 }

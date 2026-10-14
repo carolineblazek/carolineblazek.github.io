@@ -65,7 +65,10 @@
 
     window.Lightbox = { openMedia, openGallery };
 
-    document.querySelectorAll(".row img:not(.flipbook-page), .row video").forEach(el => {
+    // Project-page rows, and the pieces on the More page.
+    const SELECTOR = ".row img:not(.flipbook-page), .row video, .more-item img, .more-item video";
+
+    document.querySelectorAll(SELECTOR).forEach(el => {
         el.classList.add("zoomable");
         el.tabIndex = 0;
         el.setAttribute("role", "button");
