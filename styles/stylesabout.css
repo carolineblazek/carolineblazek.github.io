@@ -21,6 +21,34 @@
     align-items: start;
 }
 
+/* Portrait with its credit beneath. Mirrors .project-credit on the project pages
+   (grey line, link in ink), which lives in stylesproject.css and is not loaded here. */
+.about-portrait-block{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-credit{
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: var(--gray);
+}
+
+.about-credit a{
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.about-credit a:hover{
+    color: var(--gray);
+}
+
 .about-portrait{
     width: 100%;
     aspect-ratio: var(--portrait);
@@ -205,7 +233,8 @@
     .about-now li,
     .about-entry-title,
     .about-links a,
-    .about-note{
+    .about-note,
+    .about-credit{
         font-size: 17px;
     }
 }
