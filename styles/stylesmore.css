@@ -67,7 +67,8 @@
 .more-item:nth-child(7){ width: 78%; margin-top: 50px; }                   
 .more-item:nth-child(8){ width: 86%; margin-left: 12%; margin-top: 90px; } 
 .more-item:nth-child(9){ width: 78%; margin-top: 50px; }      
-.more-item:nth-child(10){ width: 86%; margin-left: 10%; margin-top: 90px; }           
+.more-item:nth-child(10){ width: 86%; margin-left: 10%; margin-top: 90px; }
+.more-item:nth-child(11){ width: 78%; margin-top: 50px; }           
 
 /* ---------- Responsive ---------- */
 
