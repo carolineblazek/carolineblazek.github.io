@@ -1,0 +1,7 @@
+# Originals. The site serves only images/web/, which is built from these.
+# Keeping them out of the repo keeps the GitHub Pages artifact under its 1 GB cap.
+images/design/
+images/illustration/
+images/sketchbook/
+
+.DS_Store
