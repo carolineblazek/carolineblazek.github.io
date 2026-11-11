@@ -6,15 +6,16 @@
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
         <title>Sip & Tell — Caroline Blazek</title>
         <meta name="description" content="A community drink archive split between a daytime café and a late-night saloon, designed from brand and illustration through a fully prototyped user flow to live code.">
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90' fill='%23ffb800'>☻︎</text> </svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=IBM+Plex+Mono:wght@600&display=swap">
-        <link rel="stylesheet" href="styles/base.css?v=20261013">
-        <link rel="stylesheet" href="styles/stylesproject.css?v=20261013">
+        <link rel="stylesheet" href="styles/base.css?v=20261111f">
+        <script src="scripts/brand.js?v=20261111d" defer></script>
+        <link rel="stylesheet" href="styles/stylesproject.css?v=20261111f">
         <script src="scripts/lightbox.js?v=20261013" defer></script>
     </head>
-    <body id="top">
+    <body id="top" data-page="works">
         <header class="site-header">
             <nav class="site-nav" aria-label="Primary">
                 <a href="index.html" class="is-active">Selected Works</a>
@@ -23,25 +24,26 @@
             </nav>
         </header>
 
-        <main class="project">
+        <main class="project" data-role="web">
             <nav class="project-nav" aria-label="Adjacent projects">
                 <a href="burntorangesaturdays.html" rel="prev">← Previous</a>
-                <a href="ritual.html" rel="next">Next →</a>
+                <a href="pokerclub.html" rel="next">Next →</a>
             </nav>
 
             <div class="project-sections">
 
                 <section class="row row--wide-left">
-                    <img src="images/web/design/SipAndTell/logo-over-cards.jpg" alt="The Sip &amp; Tell sun-and-moon logo over a spread of printed recipe cards" loading="eager">
+                    <img src="images/web/design/SipAndTell/recipe-cards.jpg" alt="Printed recipe cards for all six drinks scattered on a wooden table, Day Café cards in white and blue, Moon Saloon cards in black and pink" loading="eager">
                     <div class="project-copy">
                         <div class="project-heading">
                             <div class="project-title-group">
                                 <h1 class="project-title">Sip &amp; Tell</h1>
                                 <p class="project-meta">
                                     <span class="project-type">Interactive Website</span>
-                                    <span class="project-star" aria-hidden="true">✸</span>
+                                    <span class="project-sep" aria-hidden="true">/</span>
                                     <span class="project-year">2026</span>
                                 </p>
+                                <span class="project-mark glyph" data-role="web" aria-hidden="true"></span>
                             </div>
                             <ul class="project-tools" aria-label="Tools">
                                 <li>UX Design</li>
@@ -115,14 +117,14 @@
 
                         <p>In the final critique, people responded most to the illustrations, the playful mood, and the flow of the questionnaire. They also found the graphic-forward landing page hard to enter without clearer direction, which sets up my next round of refinement: making the path from browsing to participating more obvious, starting with moving the story archive above the recipe so stories come first.</p>
                     </div>
-                    <img class="fit-whole" src="images/web/design/SipAndTell/recipe-cards.jpg" alt="Printed recipe cards for all six drinks scattered on a wooden table, Day Café cards in white and blue, Moon Saloon cards in black and pink" loading="lazy">
+                    <img class="fit-whole" src="images/web/design/SipAndTell/logo-over-cards.jpg" alt="The Sip &amp; Tell sun-and-moon logo over the spread of printed recipe cards" loading="lazy">
                 </section>
 
             </div>
 
             <nav class="project-nav project-nav--bottom" aria-label="Adjacent projects">
                 <a href="burntorangesaturdays.html" rel="prev">← Previous</a>
-                <a href="ritual.html" rel="next">Next →</a>
+                <a href="pokerclub.html" rel="next">Next →</a>
             </nav>
         </main>
 

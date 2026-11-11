@@ -40,14 +40,12 @@
 .about-credit a{
     color: var(--ink);
     text-decoration: underline;
-    text-decoration-thickness: 1.5px;
+    text-decoration-thickness: 1px;
     text-underline-offset: 3px;
     transition: color 0.2s ease;
 }
 
-.about-credit a:hover{
-    color: var(--gray);
-}
+
 
 /* The headshot's subject sits high in the source frame, so the vertical offset
    is set from her hairline rather than from the image: 25% leaves roughly 8%
@@ -77,13 +75,76 @@
     letter-spacing: -0.015em;
 }
 
-/* The ✷ is a display glyph here, not the metadata mark — size it to the caps */
-.about-star{
-    font-family: var(--font-sans);
+/* "Hey there!" waves hello on hover: each letter lifts in turn, catching
+   one of the three colours on the way up, and the mark rocks like a hand. */
+.about-title{
+    cursor: default;
+}
+
+.wave-letter{
+    display: inline-block;
+}
+
+/* Colour snaps rather than fades (black to yellow passes through olive) */
+.about-title:hover .wave-letter{
+    animation: hey-wave 0.7s cubic-bezier(0.3, 0.7, 0.4, 1) both,
+               hey-colour 0.7s steps(1, end) forwards;
+}
+
+.about-title:hover .wave-letter:nth-child(3n+1){ --wave: var(--pink); }
+.about-title:hover .wave-letter:nth-child(3n+2){ --wave: var(--yellow); }
+.about-title:hover .wave-letter:nth-child(3n+3){ --wave: var(--blue); }
+
+.wave-letter:nth-child(2){ animation-delay: 0.05s !important; }
+.wave-letter:nth-child(3){ animation-delay: 0.10s !important; }
+.wave-letter:nth-child(4){ animation-delay: 0.15s !important; }
+.wave-letter:nth-child(5){ animation-delay: 0.20s !important; }
+.wave-letter:nth-child(6){ animation-delay: 0.25s !important; }
+.wave-letter:nth-child(7){ animation-delay: 0.30s !important; }
+.wave-letter:nth-child(8){ animation-delay: 0.35s !important; }
+.wave-letter:nth-child(9){ animation-delay: 0.40s !important; }
+
+@keyframes hey-wave{
+    0%  { transform: translateY(0); }
+    35% { transform: translateY(-0.16em); }
+    70% { transform: translateY(0.02em); }
+    100%{ transform: translateY(0); }
+}
+
+@keyframes hey-colour{
+    0%  { color: var(--wave); }
+    80% { color: var(--ink); }
+    100%{ color: var(--ink); }
+}
+
+/* The three marks, sized to the caps */
+.about-marks{
+    display: inline-flex;
+    gap: 0.06em;
+    margin-left: 0.1em;
+    vertical-align: 0.04em;
+}
+
+.about-mark{
+    display: inline-block;
     font-size: 0.62em;
     line-height: 1;
-    vertical-align: 0.06em;
-    margin-left: 0.12em;
+    transition: transform var(--spin-time) var(--spin-ease);
+}
+
+/* Hover the greeting: the marks take the shared spin, one by one */
+.about-title:hover .about-mark{ transform: var(--spin); }
+.about-mark:nth-child(2){ transition-delay: 0.15s; }
+.about-mark:nth-child(3){ transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce){
+    .about-title:hover .wave-letter{
+        animation: none;
+    }
+
+    .about-mark{
+        transition: none;
+    }
 }
 
 .about-bio,
@@ -217,11 +278,7 @@
     color: var(--gray);
 }
 
-.about-links a:hover span{
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 4px;
-}
+
 
 /* ---------- Responsive ---------- */
 

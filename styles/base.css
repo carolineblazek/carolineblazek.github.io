@@ -16,7 +16,33 @@
     --margin: 80px;
     --rule-weight: 2px;
     --radius: 20px;
+
+    /* The three roles. Colour is held back at rest and arrives with
+       interaction: a hover, a selection, a click. */
+    --pink: #ff2e93;      /* ✺ design */
+    --yellow: #ffb800;    /* ☻ web / UX — a yellow-orange, so it holds on white */
+    --blue: #3d74ff;      /* ❉ social media — light enough to carry black text (4.6:1), still fully saturated */
+    /* One spin for every mark: a quarter turn and a slight swell, eased out
+       (the social card's motion, made the standard). */
+    --spin: rotate(90deg) scale(1.12);
+    --spin-time: 0.9s;
+    --spin-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    --font-glyph: "Zapf Dingbats", "Apple Symbols", "Segoe UI Symbol", "Noto Sans Symbols 2", "Noto Sans Symbols", sans-serif;
 }
+
+/* Role tokens: anything carrying data-role picks up its colour and mark.
+   --on-role is the text colour that reads on a block of that colour. */
+[data-role="design"]{ --role: var(--pink);   --on-role: var(--ink); --glyph: "\273A\FE0E"; }
+[data-role="web"]{    --role: var(--yellow); --on-role: var(--ink); --glyph: "\263B\FE0E"; }
+[data-role="social"]{ --role: var(--blue);   --on-role: var(--ink); --glyph: "\2749\FE0E"; }
+
+/* Each section of the site has a colour for everything on it that isn't a
+   project: Selected Works (and its project pages) pink, More yellow, About
+   blue. Set on <body data-page>; a project's own <main data-role> wins inside it. */
+[data-page="works"]{ --role: var(--pink);   --on-role: var(--ink); }
+[data-page="more"]{  --role: var(--yellow); --on-role: var(--ink); }
+[data-page="about"]{ --role: var(--blue);   --on-role: var(--ink); }
 
 *,
 *::before,
@@ -99,11 +125,10 @@ img{
     color: var(--ink);
 }
 
-.site-nav a:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 4px;
-}
+/* One highlight colour per nav link (the highlight itself is under "Brand") */
+.site-nav a:nth-child(1){ --hl: var(--pink); }
+.site-nav a:nth-child(2){ --hl: var(--yellow); }
+.site-nav a:nth-child(3){ --hl: var(--blue); }
 
 /* ---------- Footer ---------- */
 
@@ -134,10 +159,36 @@ img{
     color: var(--ink);
 }
 
-.footer-contact:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 4px;
+
+/* Back to top: the arrow turns into the three marks, spinning through them */
+.footer-to-top{
+    position: relative;
+    display: inline-block;
+    min-width: 1em;
+    text-align: center;
+}
+
+.footer-to-top::after{
+    content: "\273A\FE0E";
+    position: absolute;
+    inset: 0;
+    font-family: var(--font-glyph);
+    font-size: 22px;
+    line-height: 20px;
+    color: var(--pink);
+    opacity: 0;
+    transform: scale(0.4);
+    transition: opacity 0.15s ease, transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.footer-to-top:hover{
+    color: transparent !important;
+}
+
+.footer-to-top:hover::after{
+    opacity: 1;
+    transform: scale(1);
+    animation: glyph-cycle 0.9s steps(1) infinite, glyph-spin 3.6s linear infinite;   /* 90° per 0.9s, like every mark */
 }
 
 /* ---------- Holding page (temporary, while a section is in progress) ---------- */
@@ -186,11 +237,7 @@ img{
     color: var(--ink);
 }
 
-.holding-back:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 4px;
-}
+
 
 /* The lightbox is shared: project pages and the More page both use it,
    so it lives here rather than in a page-specific sheet. */
@@ -323,5 +370,155 @@ body:has(.lightbox[open]){
 
     .site-nav a{
         letter-spacing: 0.08em;
+    }
+}
+
+/* ---------- Highlight: the site's hover motif ----------
+   A block of colour sweeps in behind the text, left to right. It takes the
+   page's role colour (pink where a page has none); a rule can set --hl and
+   --hl-ink to override. Prefixed with body so it outranks each sheet's own
+   link transitions. */
+body .hl,
+body .site-nav a,
+body .footer-contact,
+body .holding-back,
+body .project-nav a,
+body .flipbook-link,
+body .project-copy a,
+body .about-credit a,
+body .about-links a span{
+    background-image: linear-gradient(var(--hl, var(--role, var(--pink))), var(--hl, var(--role, var(--pink))));
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 100%;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0 0.12em;
+    margin: 0 -0.12em;
+    transition: background-size 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.2s ease;
+}
+
+body .site-nav a:hover,
+body .footer-contact:hover,
+body .holding-back:hover,
+body .project-nav a:hover,
+body .flipbook-link:hover,
+body .project-copy a:hover,
+body .about-credit a:hover,
+body .about-links a:hover span,
+.card-link:hover .hl{
+    background-size: 100% 100%;
+    color: var(--hl-ink, var(--on-role, var(--ink)));
+}
+
+@media (prefers-reduced-motion: reduce){
+    body .hl, body .site-nav a, body .footer-contact, body .holding-back, body .project-nav a,
+    body .flipbook-link, body .project-copy a, body .about-credit a, body .about-links a span{
+        transition: none;
+    }
+}
+
+/* ---------- Brand: the three marks ---------- */
+
+/* An inline mark. Usage: <span class="glyph" data-role="design"></span>
+   The character lives here, not in the HTML, so swapping a mark is one edit. */
+.glyph::before{
+    content: var(--glyph);
+    font-family: var(--font-glyph);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--role);
+}
+
+/* Selections cycle through the three colours (brand.js advances data-sel) */
+html[data-sel="0"] ::selection{ background: var(--pink);   color: var(--ink); }
+html[data-sel="1"] ::selection{ background: var(--yellow); color: var(--ink); }
+html[data-sel="2"] ::selection{ background: var(--blue);   color: var(--ink); }
+
+/* Particles (brand.js) */
+.spark-layer{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.spark{
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    font-family: var(--font-glyph);
+    font-size: var(--size);
+    line-height: 1;
+    color: var(--role);
+    translate: -50% -50%;
+    animation: spark-fly var(--life) cubic-bezier(0.15, 0.7, 0.3, 1) forwards;
+}
+
+.spark--rain{
+    animation-timing-function: cubic-bezier(0.4, 0, 0.8, 0.6);
+}
+
+@keyframes spark-fly{
+    0%  { transform: translate(0, 0) rotate(0deg) scale(0.3); opacity: 1; }
+    15% { transform: translate(calc(var(--dx) * 0.25), calc(var(--dy) * 0.25)) rotate(calc(var(--rot) * 0.25)) scale(1.1); }
+    70% { opacity: 1; }
+    100%{ transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(0.8); opacity: 0; }
+}
+
+@keyframes glyph-cycle{
+    0%      { content: "\273A\FE0E"; color: var(--pink); }
+    33.33%  { content: "\263B\FE0E"; color: var(--yellow); }
+    66.66%  { content: "\2749\FE0E"; color: var(--blue); }
+}
+
+@keyframes glyph-spin{
+    to{ rotate: 360deg; }
+}
+
+/* Inline role word (About page): highlight sweeps in, its mark pops up */
+.role-word{
+    position: relative;
+    isolation: isolate;
+    white-space: nowrap;
+}
+
+.role-word::before{
+    content: "";
+    position: absolute;
+    inset: 0.05em -0.15em -0.02em;
+    z-index: -1;
+    border-radius: 4px;
+    background: var(--role);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.role-word::after{
+    content: var(--glyph);
+    position: absolute;
+    top: -0.75em;
+    right: -0.7em;
+    font-family: var(--font-glyph);
+    font-size: 1.25em;
+    line-height: 1;
+    color: var(--role);
+    opacity: 0;
+    transform: scale(0.2) rotate(-90deg);
+    transition: opacity 0.15s ease, transform var(--spin-time) var(--spin-ease);
+}
+
+.role-word:hover{ color: var(--on-role); }
+.role-word:hover::before{ transform: scaleX(1); }
+.role-word:hover::after{ opacity: 1; transform: scale(1) rotate(0deg); }
+
+@media (prefers-reduced-motion: reduce){
+    .role-word::before,
+    .role-word::after,
+    .footer-to-top::after{
+        transition: none;
+        animation: none !important;
     }
 }

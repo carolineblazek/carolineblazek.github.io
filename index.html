@@ -5,18 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
         <title>Caroline Blazek</title>
-        <meta name="description" content="Caroline Blazek is a designer, illustrator, and social media manager based in St. Louis.">
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <meta name="description" content="Caroline Blazek is a designer, web builder, and social media manager based in St. Louis.">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90' fill='%23ff2e93'>✺︎</text> </svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=Instrument+Serif&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arbutus&family=Bayon&family=Butterfly+Kids&family=Great+Vibes&family=Griffy&family=Henny+Penny&family=Idiqlat&family=Indie+Flower&family=Ingrid+Darling&family=Limelight&family=Marck+Script&family=Miltonian+Tattoo&family=New+Rocker&family=Tillana&text=CarolineBzk&display=swap">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barrio&family=Cal+Sans&text=ILLUSTRATORSOCIALMEDIAMANAGERillustratorsocialmediamanager&display=swap">
-        <link rel="stylesheet" href="styles/base.css?v=20261013">
-        <link rel="stylesheet" href="styles/stylesindex.css?v=20261001b">
-        <script src="scripts/home.js?v=20260930" defer></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Silkscreen&text=SOCIALMEDIAMANAGERWEBBUILDERsocialmediamanagerwebbuilder%20&display=swap">
+        <link rel="stylesheet" href="styles/base.css?v=20261111f">
+        <script src="scripts/brand.js?v=20261111d" defer></script>
+        <link rel="stylesheet" href="styles/stylesindex.css?v=20261111f">
+        <script src="scripts/home.js?v=20261111e" defer></script>
     </head>
-    <body id="top">
+    <body id="top" data-page="works">
         <header class="site-header">
             <nav class="site-nav" aria-label="Primary">
                 <a href="index.html" class="is-active" aria-current="page">Selected Works</a>
@@ -28,86 +29,120 @@
         <main>
             <section class="hero">
                 <h1 class="wordmark" aria-label="Caroline Blazek"><span aria-hidden="true"><span class="wm-word"><span class="wm-letter" data-alt="Ingrid Darling">C</span><span class="wm-letter" data-alt="Henny Penny">a</span><span class="wm-letter" data-alt="Limelight">r</span><span class="wm-letter" data-alt="New Rocker">o</span><span class="wm-letter" data-alt="Tillana">l</span><span class="wm-letter" data-alt="Indie Flower">i</span><span class="wm-letter" data-alt="Arbutus">n</span><span class="wm-letter" data-alt="Bayon">e</span></span><span class="wm-space"> </span><span class="wm-word"><span class="wm-letter" data-alt="Great Vibes">B</span><span class="wm-letter" data-alt="Idiqlat">l</span><span class="wm-letter" data-alt="Griffy">a</span><span class="wm-letter" data-alt="Butterfly Kids">z</span><span class="wm-letter" data-alt="Marck Script">e</span><span class="wm-letter" data-alt="Miltonian Tattoo">k</span></span></span></h1>
-                <p class="tagline">is a <span class="role" data-alt="Instrument Serif" data-alt-size="1.12em">designer</span>, <span class="role" data-alt="Barrio">illustrator</span>, and <span class="role" data-alt="Cal Sans">social media manager</span> <br class="tagline-break">based in New York City.</p>
+                <p class="tagline">is a <span class="role" data-role="design" data-alt="Instrument Serif" data-alt-size="1.12em">designer</span>, <span class="role" data-role="web" data-alt="Silkscreen" data-alt-size="0.92em">web builder</span>, and <span class="role" data-role="social" data-alt="Cal Sans">social media manager</span> <br class="tagline-break">based in New York City.</p>
             </section>
 
             <section class="work" aria-label="Selected works">
                 <ul class="work-grid">
-                    <li class="card">
+                    <li class="card" data-role="social">
                         <a href="katonahwine.html" class="card-link">
-                            <img class="card-image" src="images/web/design/KatonahWineAndLiquor/KatonahInstaMockup.jpg" alt="The Katonah Wine & Liquor Instagram grid" loading="eager">
+                            <div class="card-media"><img class="card-image" src="images/web/design/KatonahWineAndLiquor/KatonahInstaMockup.jpg" alt="The Katonah Wine & Liquor Instagram grid" loading="eager"></div>
                             <div class="card-text">
-                                <h2 class="card-title">Katonah Wine &amp; Liquor</h2>
-                                <p class="card-meta">
-                                    <span class="card-type">Social Media Marketing</span>
-                                    <span class="card-star" aria-hidden="true">✸</span>
-                                    <span class="card-year">2026</span>
-                                </p>
+                                <div class="card-info">
+                                    <h2 class="card-title"><span class="hl">Katonah Wine &amp; Liquor</span></h2>
+                                    <p class="card-meta">
+                                        <span class="card-type">Social Media Marketing</span>
+                                        <span class="card-sep" aria-hidden="true">/</span>
+                                        <span class="card-year">2026</span>
+                                    </p>
+                                </div>
+                                <span class="card-mark glyph" data-role="social" aria-hidden="true"></span>
                             </div>
                         </a>
                     </li>
-                    <li class="card">
+                    <li class="card" data-role="design">
                         <a href="bauredesign.html" class="card-link">
-                            <img class="card-image" src="images/web/design/BAURedesign/posters.jpg" alt="Beacon Artist Union posters on a street-side wall" loading="lazy">
+                            <div class="card-media"><img class="card-image" src="images/web/design/BAURedesign/posters.jpg" alt="Beacon Artist Union posters on a street-side wall" loading="lazy"></div>
                             <div class="card-text">
-                                <h2 class="card-title">Beacon Artist Union</h2>
-                                <p class="card-meta">
-                                    <span class="card-type">Brand Identity</span>
-                                    <span class="card-star" aria-hidden="true">✸</span>
-                                    <span class="card-year">2025</span>
-                                </p>
+                                <div class="card-info">
+                                    <h2 class="card-title"><span class="hl">Beacon Artist Union</span></h2>
+                                    <p class="card-meta">
+                                        <span class="card-type">Brand Identity</span>
+                                        <span class="card-sep" aria-hidden="true">/</span>
+                                        <span class="card-year">2025</span>
+                                    </p>
+                                </div>
+                                <span class="card-mark glyph" data-role="design" aria-hidden="true"></span>
                             </div>
                         </a>
                     </li>
-                    <li class="card">
+                    <li class="card" data-role="design">
                         <a href="burntorangesaturdays.html" class="card-link">
-                            <img class="card-image" src="images/web/design/BurntOrangeSaturdays/hero-card.jpg" alt="The cowhide lid lifted off the Burnt Orange Saturdays box, collaged photographs inside" loading="lazy">
+                            <div class="card-media"><img class="card-image" src="images/web/design/BurntOrangeSaturdays/hero-card.jpg" alt="The cowhide lid lifted off the Burnt Orange Saturdays box, collaged photographs inside" loading="lazy"></div>
                             <div class="card-text">
-                                <h2 class="card-title">Burnt Orange Saturdays</h2>
-                                <p class="card-meta">
-                                    <span class="card-type">Interactive Object</span>
-                                    <span class="card-star" aria-hidden="true">✸</span>
-                                    <span class="card-year">2026</span>
-                                </p>
+                                <div class="card-info">
+                                    <h2 class="card-title"><span class="hl">Burnt Orange Saturdays</span></h2>
+                                    <p class="card-meta">
+                                        <span class="card-type">Interactive Object</span>
+                                        <span class="card-sep" aria-hidden="true">/</span>
+                                        <span class="card-year">2026</span>
+                                    </p>
+                                </div>
+                                <span class="card-mark glyph" data-role="design" aria-hidden="true"></span>
                             </div>
                         </a>
                     </li>
-                    <li class="card">
+                    <li class="card" data-role="web">
                         <a href="siptell.html" class="card-link">
-                            <img class="card-image" src="images/web/design/SipAndTell/hero-card.jpg" alt="The Sip &amp; Tell logo over a spread of printed recipe cards" loading="lazy">
+                            <div class="card-media"><img class="card-image" src="images/web/design/SipAndTell/recipe-cards.jpg" alt="Printed Sip &amp; Tell recipe cards for six drinks scattered on a wooden table" loading="lazy"></div>
                             <div class="card-text">
-                                <h2 class="card-title">Sip &amp; Tell</h2>
-                                <p class="card-meta">
-                                    <span class="card-type">Interactive Website</span>
-                                    <span class="card-star" aria-hidden="true">✸</span>
-                                    <span class="card-year">2026</span>
-                                </p>
+                                <div class="card-info">
+                                    <h2 class="card-title"><span class="hl">Sip &amp; Tell</span></h2>
+                                    <p class="card-meta">
+                                        <span class="card-type">Interactive Website</span>
+                                        <span class="card-sep" aria-hidden="true">/</span>
+                                        <span class="card-year">2026</span>
+                                    </p>
+                                </div>
+                                <span class="card-mark glyph" data-role="web" aria-hidden="true"></span>
                             </div>
                         </a>
                     </li>
-                    <li class="card">
-                        <a href="ritual.html" class="card-link">
-                            <img class="card-image" src="images/web/design/Ritual/ritual1.jpg" alt="Ritual, an accordion book in pinks" loading="lazy">
+                    <li class="card" data-role="social">
+                        <a href="pokerclub.html" class="card-link">
+                            <div class="card-media"><img class="card-image" src="images/web/design/PokerClub/pokerpamphlets-card.jpg?v=2" alt="A spread of WashU Poker Club pamphlets and playing cards" loading="lazy"></div>
                             <div class="card-text">
-                                <h2 class="card-title">Ritual</h2>
-                                <p class="card-meta">
-                                    <span class="card-type">Book Design</span>
-                                    <span class="card-star" aria-hidden="true">✸</span>
-                                    <span class="card-year">2026</span>
-                                </p>
+                                <div class="card-info">
+                                    <h2 class="card-title"><span class="hl">WashU Poker Club</span></h2>
+                                    <p class="card-meta">
+                                        <span class="card-type">Brand Identity</span>
+                                        <span class="card-sep" aria-hidden="true">/</span>
+                                        <span class="card-year">2025 – 2026</span>
+                                    </p>
+                                </div>
+                                <span class="card-mark glyph" data-role="social" aria-hidden="true"></span>
                             </div>
                         </a>
                     </li>
-                    <li class="card">
+                    <li class="card" data-role="web">
                         <a href="fulcrumq.html" class="card-link">
-                            <img class="card-image" src="images/web/design/FulcrumQ/hero-card.jpg" alt="The FulcrumQ client dashboard shown as layered browser windows against a purple field" loading="lazy">
+                            <div class="card-media"><img class="card-image" src="images/web/design/FulcrumQ/hero-card.jpg" alt="The FulcrumQ client dashboard shown as layered browser windows against a purple field" loading="lazy"></div>
                             <div class="card-text">
-                                <h2 class="card-title">FulcrumQ</h2>
-                                <p class="card-meta">
-                                    <span class="card-type">Web Design</span>
-                                    <span class="card-star" aria-hidden="true">✸</span>
-                                    <span class="card-year">2026</span>
-                                </p>
+                                <div class="card-info">
+                                    <h2 class="card-title"><span class="hl">FulcrumQ</span></h2>
+                                    <p class="card-meta">
+                                        <span class="card-type">Web Design</span>
+                                        <span class="card-sep" aria-hidden="true">/</span>
+                                        <span class="card-year">2026</span>
+                                    </p>
+                                </div>
+                                <span class="card-mark glyph" data-role="web" aria-hidden="true"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="card" data-role="design">
+                        <a href="ritual.html" class="card-link">
+                            <div class="card-media"><img class="card-image" src="images/web/design/Ritual/ritual1.jpg" alt="Ritual, an accordion book in pinks" loading="lazy"></div>
+                            <div class="card-text">
+                                <div class="card-info">
+                                    <h2 class="card-title"><span class="hl">Ritual</span></h2>
+                                    <p class="card-meta">
+                                        <span class="card-type">Book Design</span>
+                                        <span class="card-sep" aria-hidden="true">/</span>
+                                        <span class="card-year">2026</span>
+                                    </p>
+                                </div>
+                                <span class="card-mark glyph" data-role="design" aria-hidden="true"></span>
                             </div>
                         </a>
                     </li>

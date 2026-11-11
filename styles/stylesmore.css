@@ -48,7 +48,7 @@
     text-wrap: balance;
 }
 
-.more-item figcaption span{
+.more-item figcaption > span{
     display: block;
     color: var(--gray);
 }

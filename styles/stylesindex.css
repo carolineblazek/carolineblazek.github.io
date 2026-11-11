@@ -42,14 +42,21 @@
 }
 
 .wm-letter:hover,
-.wm-letter.is-alt{
+.wm-letter.is-alt,
+.wm-letter.is-pinned{
     font-family: var(--alt), var(--font-serif);
     width: var(--w-alt, auto);
 }
 
+/* ...and a colour, cycling pink, yellow, blue along the name */
+.wm-letter{ transition: width 0.22s ease, color 0.15s ease; cursor: pointer; }
+.wm-letter:nth-child(3n+1):is(:hover, .is-pinned){ color: var(--pink); }
+.wm-letter:nth-child(3n+2):is(:hover, .is-pinned){ color: var(--yellow); }
+.wm-letter:nth-child(3n+3):is(:hover, .is-pinned){ color: var(--blue); }
+
 .tagline{
     margin: 0;
-    max-width: 760px;
+    max-width: 840px;   /* holds the three roles on one line at desktop */
     font-size: 25px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -65,17 +72,71 @@
     vertical-align: baseline;
     text-align: center;
     white-space: nowrap;
-    transition: width 0.22s ease;
+    transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+/* Hovering a role: a straight highlight in its colour sweeps in behind the
+   word, and its mark appears above the end of it. Both are positioned, so
+   neither changes the width home.js measured. */
+.role{
+    position: relative;
+    isolation: isolate;
+    cursor: default;
+}
+
+.role::before{
+    content: "";
+    position: absolute;
+    inset: -0.06em var(--hl-inset, 0.06em) -0.08em;   /* home.js sets --hl-inset so the colour sits evenly around the text */
+    z-index: -1;
+    background: var(--role);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.role::after{
+    content: var(--glyph);
+    position: absolute;
+    bottom: 70%;
+    right: -0.75em;
+    font-family: var(--font-glyph);
+    font-size: 2.5em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    color: var(--role);
+    opacity: 0;
+    transform: translateY(0.25em);
+    transition: opacity 0.25s ease, transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+    pointer-events: none;
+}
+
+.role{ cursor: pointer; }
+.role:is(:hover, .is-pinned){ color: var(--on-role); }
+.role:is(:hover, .is-pinned)::before{ transform: scaleX(1); }
+.role:is(:hover, .is-pinned)::after{ opacity: 1; transform: none; }
+.role:focus-visible{ outline: 2px solid var(--ink); outline-offset: 4px; }
+
 .role:hover,
-.role.is-alt{
+.role.is-alt,
+.role.is-pinned{
     font-family: var(--alt), var(--font-sans);
     font-weight: var(--alt-weight, 400);
     font-style: var(--alt-style, normal);
     font-size: var(--alt-size, 1em);
     letter-spacing: var(--alt-tracking, normal);
+    line-height: var(--alt-lh, 1);   /* undoes --alt-size, so the line never shifts vertically */
     width: var(--w-alt, auto);
+}
+
+/* Lit up, a role is its alternate width plus padding either side (home.js
+   measures --w-lit), so the highlight has room and the comma beside it
+   slides over smoothly instead of touching the colour. */
+.role:hover,
+.role.is-pinned{
+    width: var(--w-lit, var(--w-alt, auto));
 }
 
 /* ---------- Work grid ---------- */
@@ -100,26 +161,81 @@
     gap: 25px;
 }
 
+/* The wrapper carries the hover scale and the grid fade */
+.card-media{
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: #e9e9e9;
+    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.3s ease, opacity 0.35s ease;
+}
+
 .card-image{
     width: 100%;
     aspect-ratio: 620 / 420;
     object-fit: cover;
-    border-radius: var(--radius);
-    background-color: #e9e9e9;
-    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.3s ease;
 }
 
-.card-link:hover .card-image{
+.card-link:hover .card-media{
     transform: scale(1.025);
     filter: brightness(0.88);
 }
 
-/* Title + meta sit in their own group (Figma "title-wrap"), 25px below the image, 5px apart */
+/* Hovering a role in the tagline fades the projects that aren't that kind
+   of work (home.js sets data-focus on the grid) and turns the others' marks */
+.work-grid[data-focus] .card .card-media{
+    opacity: 0.3;
+    filter: grayscale(1);
+}
+
+.work-grid[data-focus="design"] .card[data-role="design"] .card-media,
+.work-grid[data-focus="web"]    .card[data-role="web"]    .card-media,
+.work-grid[data-focus="social"] .card[data-role="social"] .card-media{
+    opacity: 1;
+    filter: none;
+}
+
+.work-grid[data-focus="design"] .card[data-role="design"] .hl,
+.work-grid[data-focus="web"]    .card[data-role="web"]    .hl,
+.work-grid[data-focus="social"] .card[data-role="social"] .hl{
+    background-size: 100% 100%;
+    color: var(--on-role);
+}
+
+.work-grid[data-focus="design"] .card[data-role="design"] .card-mark,
+.work-grid[data-focus="web"]    .card[data-role="web"]    .card-mark,
+.work-grid[data-focus="social"] .card[data-role="social"] .card-mark{
+    transform: var(--mark-move);
+}
+
+/* Below the image: title + meta on the left, the project's mark on the right,
+   its right edge on the photo's right edge */
 .card-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.card-info{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    min-width: 0;
 }
+
+/* The mark. On hover it takes the shared spin (base.css --spin). */
+.card-mark{
+    flex: none;
+    font-size: 64px;
+    line-height: 1;
+    --mark-move: var(--spin);
+    transition: transform var(--spin-time) var(--spin-ease);
+}
+
+.card-mark::before{ display: block; }
+
+
+.card-link:hover .card-mark{ transform: var(--mark-move); }
 
 .card-title{
     margin: 0;
@@ -130,11 +246,7 @@
     text-transform: uppercase;
 }
 
-.card-link:hover .card-title{
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-}
+/* Titles take the highlight (base.css) in the project's colour on hover */
 
 .card-meta{
     margin: 0;
@@ -152,9 +264,8 @@
     text-transform: uppercase;
 }
 
-.card-star{
-    font-size: 20px;
-    line-height: 1;
+.card-sep{
+    color: var(--gray);
 }
 
 .card-year{
@@ -179,7 +290,9 @@
 }
 
 .more-button:hover{
-    border-color: var(--ink);
+    border-color: var(--role);
+    background: var(--role);
+    color: var(--on-role);
 }
 
 /* ---------- Responsive ---------- */
@@ -240,8 +353,8 @@
         gap: 12px;
     }
 
-    .card-star{
-        font-size: 16px;
+    .card-mark{
+        font-size: 44px;
     }
 
     .card-title{
@@ -250,5 +363,61 @@
 
     .tagline{
         font-size: 16px;
+    }
+}
+
+/* While a role is pinned: a pill at the foot of the screen says which, and
+   clears it. It rides along as you scroll the grid. */
+.focus-pill{
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    z-index: 50;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px 10px 18px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--role);
+    color: var(--on-role);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(17, 17, 17, 0.18);
+    transform: translate(-50%, 140%);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
+}
+
+.focus-pill.is-shown{
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+.focus-pill .glyph::before{
+    color: inherit;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.focus-pill-x{
+    font-family: var(--font-sans);
+    font-size: 20px;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .role::before,
+    .role::after,
+    .card-media,
+    .card-mark,
+    .focus-pill{
+        transition: none;
     }
 }

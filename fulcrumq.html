@@ -6,15 +6,16 @@
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
         <title>FulcrumQ — Caroline Blazek</title>
         <meta name="description" content="Client dashboard and AI tool interfaces for FulcrumQ, from platform audit through a three-mode colour system to developer handoff.">
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90'>✸</text> </svg>">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'> <text y='0.9em' font-size='90' fill='%23ffb800'>☻︎</text> </svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=IBM+Plex+Mono:wght@600&display=swap">
-        <link rel="stylesheet" href="styles/base.css?v=20261013">
-        <link rel="stylesheet" href="styles/stylesproject.css?v=20261013">
+        <link rel="stylesheet" href="styles/base.css?v=20261111f">
+        <script src="scripts/brand.js?v=20261111d" defer></script>
+        <link rel="stylesheet" href="styles/stylesproject.css?v=20261111f">
         <script src="scripts/lightbox.js?v=20261013" defer></script>
     </head>
-    <body id="top">
+    <body id="top" data-page="works">
         <header class="site-header">
             <nav class="site-nav" aria-label="Primary">
                 <a href="index.html" class="is-active">Selected Works</a>
@@ -23,10 +24,10 @@
             </nav>
         </header>
 
-        <main class="project">
+        <main class="project" data-role="web">
             <nav class="project-nav" aria-label="Adjacent projects">
-                <a href="ritual.html" rel="prev">← Previous</a>
-                <a href="katonahwine.html" rel="next">Next →</a>
+                <a href="pokerclub.html" rel="prev">← Previous</a>
+                <a href="ritual.html" rel="next">Next →</a>
             </nav>
 
             <div class="project-sections">
@@ -39,9 +40,10 @@
                                 <h1 class="project-title">FulcrumQ</h1>
                                 <p class="project-meta">
                                     <span class="project-type">Web Design</span>
-                                    <span class="project-star" aria-hidden="true">✸</span>
+                                    <span class="project-sep" aria-hidden="true">/</span>
                                     <span class="project-year">2026</span>
                                 </p>
+                                <span class="project-mark glyph" data-role="web" aria-hidden="true"></span>
                             </div>
                             <ul class="project-tools" aria-label="Tools">
                                 <li>UX Design</li>
@@ -97,8 +99,8 @@
             </div>
 
             <nav class="project-nav project-nav--bottom" aria-label="Adjacent projects">
-                <a href="ritual.html" rel="prev">← Previous</a>
-                <a href="katonahwine.html" rel="next">Next →</a>
+                <a href="pokerclub.html" rel="prev">← Previous</a>
+                <a href="ritual.html" rel="next">Next →</a>
             </nav>
         </main>
 
