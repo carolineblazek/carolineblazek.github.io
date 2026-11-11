@@ -123,7 +123,7 @@
     bottom: 12px;
     margin: 0;
     padding: 7px 12px;
-    border: var(--rule-weight) solid rgba(252, 252, 252, 0.55);
+    border: var(--line) solid rgba(252, 252, 252, 0.55);
     border-radius: 80px;
     background-color: rgba(17, 17, 17, 0.45);
     -webkit-backdrop-filter: blur(6px);

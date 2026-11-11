@@ -40,7 +40,7 @@
 .about-credit a{
     color: var(--ink);
     text-decoration: underline;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: var(--line);
     text-underline-offset: 3px;
     transition: color 0.2s ease;
 }
@@ -202,7 +202,7 @@
     gap: 60px;
     align-items: start;
     padding-top: 32px;
-    border-top: var(--rule-weight) solid var(--rule);
+    border-top: var(--line) solid var(--rule);
 }
 
 .about-column{

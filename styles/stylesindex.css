@@ -279,7 +279,7 @@
     display: table;               /* shrink-wraps and centres without flex on the parent */
     margin: 80px auto 0;
     padding: 10px 20px;
-    border: var(--rule-weight) solid var(--rule);
+    border: var(--line) solid var(--rule);
     border-radius: 40px;
     font-size: 40px;
     font-weight: 600;

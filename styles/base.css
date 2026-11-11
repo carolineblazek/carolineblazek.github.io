@@ -14,7 +14,7 @@
     --font-mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
 
     --margin: 80px;
-    --rule-weight: 2px;
+    --line: 1.5px;        /* the one stroke weight: dividers, pill and button outlines, link underlines */
     --radius: 20px;
 
     /* The three roles. Colour is held back at rest and arrives with
@@ -100,7 +100,7 @@ img{
 
 .site-header{
     padding: 20px var(--margin);
-    border-bottom: var(--rule-weight) solid var(--rule);
+    border-bottom: var(--line) solid var(--rule);
 }
 
 .site-nav{
@@ -134,7 +134,7 @@ img{
 
 .site-footer{
     padding: 20px var(--margin);
-    border-top: var(--rule-weight) solid var(--rule);
+    border-top: var(--line) solid var(--rule);
     display: flex;
     justify-content: space-between;
     align-items: center;

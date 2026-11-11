@@ -122,7 +122,7 @@
 }
 
 .flipbook:focus-visible .flipbook-page{
-    outline: var(--rule-weight) solid var(--ink);
+    outline: 2px solid var(--ink);   /* focus ring: kept at 2px so keyboard focus stays easy to see */
     outline-offset: 4px;
 }
 
@@ -217,7 +217,7 @@
 /* Links inside project copy (e.g. a photo credit) */
 .project-copy a{
     text-decoration: underline;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: var(--line);
     text-underline-offset: 3px;
     transition: color 0.2s ease;
 }
@@ -310,8 +310,8 @@
 }
 
 .project-tools li{
-    padding: 5px 10px;
-    border: var(--rule-weight) solid var(--rule);
+    padding: 7px 14px;
+    border: var(--line) solid var(--rule);
     border-radius: 80px;
     font-size: 15px;
     font-weight: 600;
@@ -418,24 +418,6 @@
    <main class="project" data-role="..."> sets --role and --glyph for the
    whole page (the tokens are in base.css). */
 
-/* Each section label is led by the page's mark */
-.project .section-label::before{
-    content: var(--glyph);
-    display: inline-block;
-    margin-right: 0.5em;
-    font-family: var(--font-glyph);
-    font-size: 1.7em;
-    font-weight: 400;
-    line-height: 0;
-    vertical-align: -0.2em;
-    color: var(--role);
-    transition: transform var(--spin-time) var(--spin-ease);
-}
-
-.project .project-copy:hover .section-label::before{
-    transform: var(--spin);
-}
-
 /* Tool pills fill with the page colour */
 .project-tools li{
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -450,11 +432,10 @@
 /* Links in copy (credits, live site) underline in the page colour */
 .project-copy .project-credit a{
     text-decoration-color: var(--role);
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: var(--line);
 }
 
 @media (prefers-reduced-motion: reduce){
-    .project .section-label::before,
     .project-mark,
     .project-tools li{
         transition: none;
